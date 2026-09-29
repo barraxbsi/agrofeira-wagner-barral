@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | AgroFeira de Paragominas</title>
+</head>
+
+<body>
+    <!-- Atalho de acessibilidade para saltar para o conteúdo principal -->
+    <a href="#conteudo-principal" class="pular">Pular para o conteúdo</a>
+
+    <!-- Cabeçalho e Navegação Principal -->
+    <header class="cabecalho-site">
+        <h1>AgroFeira</h1>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="safra.html">Safra</a></li>
+                <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
+                <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo-principal">
+        <h2>Sobre a AgroFeira</h2>
+
+        <!-- Bloco do Depoimento -->
+        <article>
+            <h3>História de quem produz</h3>
+
+            <figure>
+                <img src="cupuacu.jpg" alt="Fruto de cupuaçu aberto ao meio mostrando a polpa interior" width="600"
+                    height="400" loading="lazy">
+                <figcaption>Foto: BjoernS, CC BY-SA 2.0 DE, via Wikimedia Commons.</figcaption>
+            </figure>
+
+            <blockquote cite="https://exemplo.com/depoimento">
+                <p>"Vender na AgroFeira permitiu-nos alcançar diretamente as famílias da região com produtos frescos e
+                    valorizados."</p>
+                <footer>— <cite>Produtor local</cite></footer>
+            </blockquote>
+        </article>
+
+        <!-- Como vender na feira (Lista ordenada) -->
+        <section>
+            <h3>Como vender na feira</h3>
+            <ol>
+                <li>Preencha a sua inscrição no formulário de cadastro de produtor.</li>
+                <li>Aguarde a validação dos seus dados e a confirmação do seu espaço.</li>
+                <li>Traga a sua colheita nos dias e horários estipulados para a montagem da banca.</li>
+            </ol>
+        </section>
+
+        <!-- Glossário (Lista de Definição) -->
+        <section>
+            <h3>Glossário da Feira</h3>
+            <dl>
+                <dt>saca</dt>
+                <dd>Unidade tradicional de medida para grandes quantidades colhidas a granel ou grãos.</dd>
+
+                <dt>cacho</dt>
+                <dd>Agrupamento natural de frutos unidos à mesma haste, típico de bananas e açaí.</dd>
+
+                <dt>rasa</dt>
+                <dd>Cesto ou recipiente tradicional de medição muito utilizado no transporte e comercialização do açaí.
+                </dd>
+            </dl>
+        </section>
+
+        <!-- Perguntas Frequentes (Agrupadas com a primeira aberta por padrão) -->
+        <section>
+            <h3>Perguntas frequentes</h3>
+
+            <details name="faq" class="pergunta" open>
+                <summary>Quem pode comercializar os produtos na feira?</summary>
+                <p>Todos os agricultores familiares e pequenos produtores rurais cadastrados e validados no sistema.</p>
+            </details>
+
+            <details name="faq" class="pergunta">
+                <summary>Qual é a frequência do evento?</summary>
+                <p>A feira realiza-se semanalmente aos fins de semana na praça central.</p>
+            </details>
+
+            <details name="faq" class="pergunta">
+                <summary>Como é feito o transporte até ao local?</summary>
+                <p>O produtor pode optar por fazer o seu próprio transporte ou solicitar apoio de recolha na propriedade
+                    no ato da inscrição.</p>
+            </details>
+        </section>
+
+        <!-- Imagem Decorativa (Enfeite) -->
+        <aside>
+            <img src="enfeite.png" alt="" loading="lazy">
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape-site">
+        <p>AgroFeira Paragominas — Valorizando a agricultura local.</p>
+    </footer>
+</body>
+
+</html>

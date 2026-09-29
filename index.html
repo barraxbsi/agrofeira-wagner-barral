@@ -1,35 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroFeira — Feira de Produtores de Paragominas</title>
+    <title>Início | AgroFeira de Paragominas</title>
 </head>
+
 <body>
-    <header>
+
+    <!-- Link para pular direto ao conteúdo (Acessibilidade) -->
+    <a href="#conteudo-principal" class="pular">Pular para o conteúdo principal</a>
+
+    <!-- Cabeçalho Principal -->
+    <header class="cabecalho-site">
         <h1>AgroFeira de Paragominas</h1>
-        <nav>
-            <ul>
-                <li><a href="#apresentacao">Sobre a Feira</a></li>
-                <li><a href="#produtos">Nossos Produtos</a></li>
+        <nav aria-label="Navegação Principal">
+            <ul class="menu">
+                <li><a href="index.html" aria-current="page">Início</a></li>
+                <li><a href="safra.html">Safra</a></li>
+                <li><a href="cadastro-produtor.html">Cadastro de Produtor</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2 id="apresentacao">Apresentação</h2>
-        <p>A AgroFeira é o ponto de encontro dos agricultores familiares da região de Paragominas, oferecendo produtos frescos e cultivados localmente com sustentabilidade e qualidade direto para a sua mesa.</p>
+    <!-- Conteúdo Principal -->
+    <main id="conteudo-principal">
 
-        <h2 id="produtos">Produtos da Feira</h2>
-        <ul>
-            <li>Mandioca — vendida por quilo</li>
-            <li>Açaí nativo — vendido por litro</li>
-            <li>Farinha de mandioca — vendida por litro</li>
-        </ul>
+        <!-- Links Internos de Atalho -->
+        <p>Navegue na página: acesse a <a href="#apresentacao">apresentação da feira</a> ou veja a lista de <a href="#produtos">nossos produtos</a>.</p>
+
+        <!-- Seção 1: Apresentação -->
+        <section>
+            <h2 id="apresentacao">Apresentação da Feira</h2>
+            <p>A AgroFeira é o ponto de encontro dos agricultores familiares da região de Paragominas, oferecendo produtos <em>frescos e cultivados localmente</em> com sustentabilidade e qualidade.</p>
+
+            <figure>
+                <img src="feira-1280.jpg" srcset="feira-330.jpg 330w, feira-1280.jpg 1280w"
+                     sizes="(max-width: 600px) 330px, 1280px" width="1280" height="853"
+                     alt="Estandes de produtos agrícolas na feira de produtores">
+                <figcaption>Vista dos estandes na feira de produtores. Foto: Rayelle da Silva Freitas, CC BY-SA 4.0, via Wikimedia Commons</figcaption>
+            </figure>
+
+            <!-- Formulário de Busca -->
+            <form action="#" method="get" role="search" class="busca">
+                <label for="busca">Procurar produto</label>
+                <input type="search" id="busca" name="q">
+                <button type="submit">
+                    <img src="lupa.png" alt="Procurar">
+                </button>
+            </form>
+        </section>
+
+        <!-- Seção 2: Produtos -->
+        <section>
+            <h2 id="produtos">Produtos da Feira</h2>
+            <ul class="lista-produtos">
+                <li class="cartao-produto">Mandioca — saca de 60 kg</li>
+                <li class="cartao-produto">Banana-prata — cacho</li>
+                <li class="cartao-produto">Açaí — rasa</li>
+                <li class="cartao-produto">Pimenta-do-reino — quilo</li>
+                <li class="cartao-produto">Cupuaçu — quilo</li>
+                <li class="cartao-produto">Alface — maço</li>
+            </ul>
+
+            <aside class="aviso" aria-label="Aviso sobre os preços">
+                <p>Aviso: <strong>os preços podem mudar toda semana</strong> de acordo com a época da safra e a disponibilidade dos produtores.</p>
+            </aside>
+        </section>
+
     </main>
 
-    <footer>
-        <p>AgroFeira Paragominas — Valorizando o produtor local.</p>
+    <!-- Conteúdo Relacionado/Lateral -->
+    <aside aria-label="Informações de funcionamento">
+        <h2>Horário e Localização</h2>
+        <p><strong>Endereço:</strong> Parque de Exposições de Paragominas - PA.</p>
+        <p><strong>Funcionamento:</strong> Todos os sábados, das 06h às 12h.</p>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="rodape-site">
+        <p>AgroFeira Paragominas — Valorizando a agricultura local.</p>
     </footer>
+
 </body>
+
 </html>

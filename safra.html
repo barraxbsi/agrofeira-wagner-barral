@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safra | AgroFeira de Paragominas</title>
+</head>
+
+<body>
+    <!-- Link de pular para o conteúdo principal -->
+    <a href="#conteudo-principal">Pular para o conteúdo</a>
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="cabecalho-site">
+        <h1>AgroFeira de Paragominas</h1>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="safra.html" aria-current="page">Safra</a></li>
+                <li><a href="cadastro-produtor.html">Cadastro de Produtor</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Região de Conteúdo Principal -->
+    <main id="conteudo-principal">
+        <h2>Calendário de Safra</h2>
+
+        <!-- Parágrafo de legenda explicando os valores -->
+        <p id="legenda-safra">A tabela a seguir apresenta a disponibilidade dos produtos no primeiro semestre do ano. Os
+            status indicam: <strong>cheio</strong> para período de safra/alta oferta, <strong>meia</strong> para oferta
+            moderada e <strong>vazio</strong> para período de entressafra/pouca oferta.</p>
+
+        <!-- Tabela conectada à legenda e com a classe aplicada corretamente -->
+        <table aria-describedby="legenda-safra" class="tabela-safra">
+            <caption>Disponibilidade dos produtos agrícolas de Janeiro a Junho</caption>
+            
+            <!-- Cabeçalho da tabela -->
+            <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Janeiro</th>
+                    <th scope="col">Fevereiro</th>
+                    <th scope="col">Março</th>
+                    <th scope="col">Abril</th>
+                    <th scope="col">Maio</th>
+                    <th scope="col">Junho</th>
+                </tr>
+            </thead>
+
+            <!-- Corpo da tabela -->
+            <tbody>
+                <tr>
+                    <th scope="row">Mandioca</th>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>meia</td>
+                    <td>meia</td>
+                    <td>vazio</td>
+                    <td>vazio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Banana-prata</th>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>meia</td>
+                    <td>meia</td>
+                    <td>cheio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Açaí</th>
+                    <td>vazio</td>
+                    <td>vazio</td>
+                    <td>meia</td>
+                    <td>meia</td>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Pimenta-do-reino</th>
+                    <td>meia</td>
+                    <td>meia</td>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>meia</td>
+                    <td>vazio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Cupuaçu</th>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>meia</td>
+                    <td>vazio</td>
+                    <td>vazio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Alface</th>
+                    <td>cheio</td>
+                    <td>meia</td>
+                    <td>meia</td>
+                    <td>cheio</td>
+                    <td>cheio</td>
+                    <td>meia</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape-site">
+        <p>AgroFeira Paragominas — Valorizando a agricultura local.</p>
+    </footer>
+</body>
+
+</html>
