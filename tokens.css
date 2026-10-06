@@ -1,12 +1,12 @@
 :root {
-  /* Cores (Hexadecimal) */
+  /* Cores Hexadecimais (Personalizadas) */
   --cor-fundo: #f4f6f0;       /* Fundo claro da página */
-  --corsuperficie: #ffffff;   /* Fundo dos cartões e campos */
+  --corsuperficie: #ffffff;   /* Fundo de cartões, avisos e campos */
   --cor-texto: #1f2937;       /* Texto principal */
-  --cor-texto-suave: #6b7280; /* Legendas e textos secundários */
+  --cor-textosuave: #6b7280;   /* Legendas, citações e rodapé */
   --cor-marca: #1e5631;       /* Cor de identidade da feira */
   --cor-sobremarca: #ffffff;  /* Texto sobre a cor da marca */
-  --cor-borda: #e5e7eb;       /* Contornos e linhas de divisão */
+  --cor-borda: #e5e7eb;       /* Linhas e contornos */
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
