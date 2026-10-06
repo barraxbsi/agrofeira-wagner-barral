@@ -1,12 +1,12 @@
 :root {
-  /* Cores Hexadecimais (Personalizadas) */
-  --cor-fundo: #f4f6f0;       /* Fundo claro da página */
-  --corsuperficie: #ffffff;   /* Fundo de cartões, avisos e campos */
-  --cor-texto: #1f2937;       /* Texto principal */
-  --cor-textosuave: #6b7280;   /* Legendas, citações e rodapé */
-  --cor-marca: #1e5631;       /* Cor de identidade | Contraste: 8.63:1  */
-  --cor-sobremarca: #ffffff;  /* Texto sobre a cor da marca */
-  --cor-borda: #e5e7eb;       /* Linhas e contornos */
+  --cor-fundo: #eef4f0;       /* Menta acinzentado claro */
+  --corsuperficie: #ffffff;   /* Branco */
+  --cor-texto: #111e16;       /* Texto bem escuro */
+  --cor-textosuave: #4a5c51;   /* Texto secundário */
+  --cor-marca: #144d32;       /* Verde musgo escuro */
+  --cor-sobremarca: #ffffff;  /* Branco */
+  --cor-borda: #cbdcd1;       /* Borda em tom menta suave */
+}
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
