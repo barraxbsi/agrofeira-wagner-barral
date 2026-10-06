@@ -1,24 +1,24 @@
 :root {
-  /* Cores personalizadas (Opção Verde Musgo & Menta) */
-  --cor-fundo: #eef4f0;       /* Menta acinzentado claro */
-  --corsuperficie: #ffffff;   /* Branco */
-  --cor-texto: #111e16;       /* Texto bem escuro */
-  --cor-textosuave: #4a5c51;   /* Texto secundário */
-  --cor-marca: #144d32;       /* Verde musgo escuro | Contraste: 9.2:1 (Passa em AA/AAA) */
-  --cor-sobremarca: #ffffff;  /* Branco */
-  --cor-borda: #cbdcd1;       /* Borda em tom menta suave */
+  /* Cores */
+  --cor-fundo: #eef4f0;
+  --corsuperficie: #ffffff;
+  --cor-texto: #111e16;
+  --cor-textosuave: #4a5c51;
+  --cor-marca: #144d32;
+  --cor-sobremarca: #ffffff;
+  --cor-borda: #cbdcd1;
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
   --fonte-titulo: 'Montserrat Alternates', sans-serif;
 
-  /* Escala Modular Tipográfica (Multiplicador: 1.25) */
+  /* Escala Modular Tipográfica */
   --tamanho-texto: 1rem;
   --tamanho-h3: 1.25rem;
   --tamanho-h2: 1.563rem;
   --tamanho-h1: 1.953rem;
 
-  /* Espaçamentos, Raio e Sombra */
+  /* Espaçamentos e Geometria */
   --espaco-1: 0.5rem;
   --espaco-2: 1rem;
   --espaco-3: 1.5rem;
