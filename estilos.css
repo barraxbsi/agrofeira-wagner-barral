@@ -1,0 +1,135 @@
+/* ==========================================================================
+   AGROFEIRA - ESTILO PRINCIPAL (estilo.css)
+   ========================================================================== */
+
+/* Estilos Globais da Página */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: var(--tamanho-texto);
+  line-height: 1.5;
+  padding: var(--espaco-2);
+}
+
+/* Tipografia e Títulos */
+h1 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-h1);
+  color: var(--cor-marca);
+  margin-bottom: var(--espaco-2);
+}
+
+h2 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-h2);
+  color: var(--cor-marca);
+  margin-top: var(--espaco-3);
+  margin-bottom: var(--espaco-2);
+}
+
+h3 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tamanho-h3);
+}
+
+p {
+  margin-bottom: var(--espaco-2);
+}
+
+a {
+  color: var(--cor-marca);
+}
+
+/* Link de acessibilidade */
+.pular {
+  position: absolute;
+  top: -100px;
+}
+.pular:focus {
+  top: 0;
+  background-color: var(--corsuperficie);
+  padding: var(--espaco-1);
+}
+
+/* Cabeçalho e Navegação */
+.cabecalho-site {
+  background-color: var(--corsuperficie);
+  padding: var(--espaco-3);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  margin-bottom: var(--espaco-3);
+}
+
+.menu {
+  display: flex;
+  gap: var(--espaco-2);
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Cartões de Produtos e Listas */
+.lista-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  list-style: none;
+}
+
+.cartao-produto {
+  background-color: var(--corsuperficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-2);
+  box-shadow: var(--sombra);
+  max-width: 300px;
+}
+
+/* Formulário de Busca e Botões (Regra composta conforme Passo 6) */
+.busca {
+  margin-top: var(--espaco-3);
+  margin-bottom: var(--espaco-3);
+}
+
+.busca input[type="search"],
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  background-color: var(--corsuperficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 0.5em 0.75em; /* Unidade 'em' para padding interno */
+  font-family: inherit;
+  font-size: var(--tamanho-texto);
+}
+
+.busca button,
+form button {
+  background-color: var(--cor-marca);
+  color: var(--cor-sobremarca);
+  border: none;
+  border-radius: var(--raio);
+  padding: 0.5em 1em; /* Unidade 'em' para padding interno */
+  cursor: pointer;
+}
+
+/* Avisos e Rodapé */
+.aviso {
+  background-color: var(--corsuperficie);
+  border-left: 4px solid var(--cor-marca);
+  padding: var(--espaco-2);
+  margin-top: var(--espaco-3);
+  border-radius: var(--raio);
+}
+
+.rodape-site {
+  margin-top: var(--espaco-4);
+  padding-top: var(--espaco-2);
+  border-top: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
+}
