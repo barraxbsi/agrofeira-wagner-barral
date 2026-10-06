@@ -39,4 +39,10 @@ h1,
 h2,
 h3 {
   overflow-wrap: break-word;
+
+  .montserrat-alternates-semibold {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
 }

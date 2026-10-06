@@ -1,16 +1,24 @@
 :root {
   /* Cores (Usar Hexadecimal) */
-  --cor-fundo: #f4f6f0;        /* Fundo claro da página */
-  --cor-superficie: #ffffff;   /* Fundo dos cartões e campos */
-  --cor-texto: #1f2937;        /* Texto principal */
-  --cor-texto-suave: #6b7280;  /* Legendas e textos secundários */
-  --cor-marca: #1e5631;        /* Cor de identidade da feira */
-  --cor-sobremarca: #ffffff;   /* Texto sobre a cor da marca */
-  --cor-borda: #e5e7eb;        /* Contornos e linhas de divisão */
+  --cor-fundo: #f4f6f0;
+  /* Fundo claro da página */
+  --cor-superficie: #ffffff;
+  /* Fundo dos cartões e campos */
+  --cor-texto: #1f2937;
+  /* Texto principal */
+  --cor-texto-suave: #6b7280;
+  /* Legendas e textos secundários */
+  --cor-marca: #1e5631;
+  /* Cor de identidade da feira */
+  --cor-sobremarca: #ffffff;
+  /* Texto sobre a cor da marca */
+  --cor-borda: #e5e7eb;
+  /* Contornos e linhas de divisão */
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
-  --fonte-titulo: 'NOME_DA_FONTE', serif; /* Fonte escolhida no Google Fonts */
+  --fonte-titulo: '--fonte-titulo: 'Montserrat Alternates', sans-serif;'
+  /* Fonte escolhida no Google Fonts */
 
   /* Escala Modular Tipográfica
      Multiplicador: 1.25
@@ -33,4 +41,7 @@
 
   --raio: 8px;
   --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+
+  }
 }
