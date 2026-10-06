@@ -1,0 +1,29 @@
+/* ==========================================================================
+   AGROFEIRA - PARTE B: CASOS DE CONFLITO E CASCATA (casos.css)
+   ========================================================================== */
+
+/* Caso 1: Conflito de Especificidade
+   A regra com a classe (.cartao-produto) vence o seletor de tag simples (li) */
+li {
+  border-color: red;
+}
+
+.cartao-produto {
+  border-color: var(--cor-borda);
+}
+
+/* Caso 2: Conflito de Ordem de Declaração
+   Como ambos usam a mesma classe, a regra definida por último no arquivo prevalece */
+.aviso {
+  background-color: red;
+}
+
+.aviso {
+  background-color: var(--corsuperficie);
+}
+
+/* Caso 3: Conflito com Estilo Inline (Sobrescrevendo via DevTools)
+   Definição base do botão de busca */
+.busca button {
+  background-color: var(--cor-marca);
+}
