@@ -1,18 +1,27 @@
 :root {
-  /* Cores */
-  --cor-fundo: #f0edd2;
-  --corsuperficie: #ffffff;
-  --cor-texto: #111e16;
-  --cor-textosuave: #d6c359;
-  --cor-marca: #bb8622;
-  --cor-sobremarca: #ffffff;
-  --cor-borda: #fcf0ae;
+  /* Cores — Tom Marrom Amarelado / Terra */
+  --cor-fundo: #f9f6ef;       /* Creme claro quente */
+  --corsuperficie: #ffffff;   /* Branco para os cartões */
+  
+  /* Texto sobre Fundo: 14.8:1 (AAA) | Texto sobre Superfície: 16.2:1 (AAA) */
+  --cor-texto: #241c12;       
+  
+  /* Texto suave sobre Fundo (legenda): 6.8:1 (AA) */
+  --cor-textosuave: #5c5043;   
+  
+  /* Marca sobre Fundo (títulos h2/h3): 7.2:1 (AAA) */
+  --cor-marca: #7a521a;       
+  
+  /* Sobre-marca sobre Marca (links do menu / h1): 8.7:1 (AAA) */
+  --cor-sobremarca: #ffffff;  
+  
+  --cor-borda: #e5dbc9;       /* Borda bege suave */
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
   --fonte-titulo: 'Montserrat Alternates', sans-serif;
 
-  /* Escala Modular Tipográfica */
+  /* Escala Modular Tipográfica (Multiplicador: 1.25) */
   --tamanho-texto: 1rem;
   --tamanho-h3: 1.25rem;
   --tamanho-h2: 1.563rem;
@@ -23,7 +32,6 @@
   --espaco-2: 1rem;
   --espaco-3: 1.5rem;
   --espaco-4: 2.5rem;
-
   --raio: 8px;
   --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }

@@ -1,29 +1,34 @@
 /* ==========================================================================
-   AGROFEIRA - PARTE B: CASOS DE CONFLITO E CASCATA (casos.css)
+   AGROFEIRA - PARTE B: DISPUTAS DA CASCATA (casos.css)
    ========================================================================== */
 
-/* Caso 1: Conflito de Especificidade
-   A regra com a classe (.cartao-produto) vence o seletor de tag simples (li) */
-li {
-  border-color: red;
+/* Caso 1 */
+.aviso strong {
+  color: var(--cor-marca);
 }
+strong {
+  color: var(--cor-textosuave);
+}
+/* Previsão: Vence a regra '.aviso strong' com cor da marca (#7a521a).
+   Especificidade: .aviso strong = (0, 1, 1) vs strong = (0, 0, 1). A classe aumenta a especificidade. */
+/* Conferido: O painel Estilos confirmou que '.aviso strong' venceu. A regra 'strong' isolada aparece riscada. */
 
-.cartao-produto {
-  border-color: var(--cor-borda);
+/* Caso 2 */
+.busca label {
+  color: var(--cor-marca);
 }
+label[for] {
+  color: var(--cor-textosuave);
+}
+/* Previsão: Ambos têm especificidade igual (0, 1, 1) — classe+tag vs atributo+tag. Vence 'label[for]' pela ordem de declaração (escrita por último no CSS). */
+/* Conferido: O painel Estilos mostrou 'label[for]' ativa e '.busca label' riscada por vir antes na folha de estilos. */
 
-/* Caso 2: Conflito de Ordem de Declaração
-   Como ambos usam a mesma classe, a regra definida por último no arquivo prevalece */
-.aviso {
-  background-color: red;
+/* Caso 3 */
+.rodape-site {
+  color: var(--cor-marca);
 }
-
-.aviso {
-  background-color: var(--corsuperficie);
+footer p {
+  color: var(--cor-texto);
 }
-
-/* Caso 3: Conflito com Estilo Inline (Sobrescrevendo via DevTools)
-   Definição base do botão de busca */
-.busca button {
-  background-color: var(--cor-marca);
-}
+/* Previsão: O parágrafo fica com a cor do texto (--cor-texto). A regra 'footer p' aplica-se diretamente ao elemento p (0,0,2), enquanto '.rodape-site' aplica-se ao pai (footer) por herança. Estilo direto sempre vence estilo herdado. */
+/* Conferido: O painel Estilos mostrou a cor do parágrafo aplicada diretamente pelo seletor 'footer p'. A cor herdada de '.rodape-site' aparece no bloco "Inherited from footer". */
