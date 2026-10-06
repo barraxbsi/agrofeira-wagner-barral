@@ -4,13 +4,14 @@
   --corsuperficie: #ffffff;   /* Fundo de cartões, avisos e campos */
   --cor-texto: #1f2937;       /* Texto principal */
   --cor-textosuave: #6b7280;   /* Legendas, citações e rodapé */
-  --cor-marca: #1e5631;       /* Cor de identidade da feira */
+  --cor-marca: #1e5631;       /* Cor de identidade | Contraste: 8.63:1  */
   --cor-sobremarca: #ffffff;  /* Texto sobre a cor da marca */
   --cor-borda: #e5e7eb;       /* Linhas e contornos */
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
   --fonte-titulo: 'Montserrat Alternates', sans-serif;
+  
 
   /* Escala Modular Tipográfica
      Multiplicador: 1.25
