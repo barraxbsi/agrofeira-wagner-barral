@@ -11,11 +11,14 @@ body {
   line-height: 1.5;
 }
 
-main, aside {
+main,
+aside {
   padding: var(--espaco-2);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--fonte-titulo);
   line-height: 1.2;
 }
@@ -40,7 +43,8 @@ h3 {
 
 p {
   margin-bottom: var(--espaco-2);
-  max-width: 65ch; /* Medida de linha entre 60 e 75 caracteres */
+  max-width: 65ch;
+  /* Medida de linha entre 60 e 75 caracteres */
 }
 
 a {
@@ -190,4 +194,22 @@ dt {
   padding: var(--espaco-2);
   margin-bottom: var(--espaco-1);
   max-width: 65ch;
+}
+
+/* Remove as bolinhas e o recuo da lista */
+.lista-produtos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Transforma cada item num cartão individual igual ao modelo */
+.cartaoproduto {
+  background-color: var(--corsuperficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: var(--espaco-2);
+  margin-bottom: var(--espaco-1);
+  max-width: 20rem;
 }
