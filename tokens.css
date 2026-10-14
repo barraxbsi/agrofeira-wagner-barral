@@ -1,4 +1,5 @@
 :root {
+  
   /* Cores — Tom Marrom Amarelado / Terra */
   --cor-fundo: #f9f6ef;       /* Creme claro quente */
   --corsuperficie: #ffffff;   /* Branco para os cartões */
@@ -51,4 +52,11 @@
     --cor-marca-forte: #f09538;   /* 8.2:1 para o hover no escuro */
     --cor-foco: #66b2ff;          /* 4.8:1 sobre o fundo escuro */
   }
+}
+:root {
+  /* Tokens existentes... */
+
+  /* Passo 7 — Novos tokens de estado */
+  --cor-marca-forte: #b85c00; /* Contraste > 4.5:1 com --cor-sobre-marca */
+  --cor-foco: #005fb8;        /* Contraste > 3:1 sobre fundo/superfície */
 }

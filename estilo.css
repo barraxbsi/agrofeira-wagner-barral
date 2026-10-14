@@ -54,7 +54,11 @@
     cursor: pointer;
   }
 
-  button:hover {
+  /* Estado :hover nos botões */
+  button:hover,
+  .busca button:hover,
+  .barra-categorias button:hover,
+  .cartaoproduto button:hover {
     background-color: var(--cor-marca-forte);
   }
 
@@ -87,12 +91,20 @@
     }
   }
 
-  /* Acessibilidade e Foco */
+  /* Passo 7 — Acessibilidade e Foco */
   :focus-visible {
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
   }
 
+  /* Anel de foco ajustado sobre elementos na faixa da marca */
+  header :focus-visible,
+  .pagina-catalogo > nav :focus-visible,
+  .pular:focus-visible {
+    outline-color: var(--cor-sobre-marca);
+  }
+
+  /* O cartão destaca-se quando o botão interno recebe foco via :has() */
   .cartaoproduto:has(button:focus-visible) {
     outline: 3px solid var(--cor-foco);
     outline-offset: 2px;
