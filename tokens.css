@@ -37,3 +37,18 @@
   --raio: 8px;
   --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+/* Passo 10 — O tema escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --cor-fundo: #121212;         /* 15.2:1 com o texto claro */
+    --cor-superficie: #1e1e1e;    /* 13.8:1 com o texto claro */
+    --cor-texto: #e0e0e0;         /* 15.2:1 sobre o fundo */
+    --cor-textosuave: #b0b0b0;    /* 9.1:1 sobre o fundo */
+    --cor-marca: #d9822b;         /* 6.3:1 sobre o fundo */
+    --cor-sobre-marca: #121212;   /* 7.5:1 sobre a marca */
+    --cor-borda: #333333;
+    --cor-marca-forte: #f09538;   /* 8.2:1 para o hover no escuro */
+    --cor-foco: #66b2ff;          /* 4.8:1 sobre o fundo escuro */
+  }
+}

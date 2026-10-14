@@ -334,3 +334,49 @@ ul.barra-categorias {
 .pagina-catalogo nav a {
   color: var(--cor-sobre-marca);
 }
+/* Passo 7 — Os estados e o foco */
+
+/* Estado hover em todos os botões do site */
+button:hover,
+.busca button:hover,
+.barra-categorias button:hover,
+.cartaoproduto button:hover {
+  background-color: var(--cor-marca-forte);
+}
+
+/* Anel de foco visível e afastado para navegação via teclado */
+:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 3px;
+}
+
+/* Foco sobre a faixa da marca (cabeçalho, menu e link de pular sobre o fundo marrom) */
+.cabecalho-site :focus-visible,
+.pagina-catalogo > nav :focus-visible,
+.pular:focus-visible {
+  outline-color: var(--cor-sobre-marca);
+}
+/* Passo 8 — O cartão que sabe que o botão está com o foco */
+
+/* :has() — Destaca o cartão inteiro quando o botão dentro dele recebe o foco do teclado */
+.cartaoproduto:has(button:focus-visible) {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+/* Passo 9 — O link de pular */
+
+/* Escondido fora da tela por padrão; aparece no canto superior esquerdo ao receber o foco via Tab */
+.pular {
+  position: absolute;
+  top: -100rem;
+  left: 0;
+  z-index: 10;
+  background-color: var(--cor-marca);
+  color: var(--cor-sobre-marca);
+  padding: var(--espaco-2);
+  text-decoration: none;
+}
+
+.pular:focus {
+  top: 0;
+}
