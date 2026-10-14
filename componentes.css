@@ -1,12 +1,12 @@
 @layer componentes {
-  /* Estilização do Menu de Navegação */
-  .menu {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-2);
+  /* Menu Lateral */
+  .menu, nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
   }
 
   .menu a {
@@ -15,12 +15,35 @@
     font-weight: bold;
   }
 
-  .menu a:hover,
-  .menu a:focus-visible {
-    text-decoration: underline;
+  /* Listas de Produtos (remove marcadores da lista) */
+  .lista-produtos, main ul, aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  /* Cartões de Produtos */
+  /* Barra de Categorias e Filtros (Botões em Pílula) */
+  .barra-categorias, .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-1);
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--espaco-3);
+    background: transparent;
+  }
+
+  .barra-categorias button, .filtros button, .barra-categorias a {
+    background-color: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  /* Cartão do Produto */
   .cartaoproduto {
     background-color: var(--cor-superficie);
     border: 1px solid var(--cor-borda);
@@ -37,8 +60,7 @@
     object-fit: cover;
   }
 
-  /* Botões e Filtros */
-  button, .busca button, .barra-categorias button, .cartaoproduto button {
+  .cartaoproduto button {
     background-color: var(--cor-marca);
     color: var(--cor-sobre-marca);
     border: none;
@@ -48,22 +70,12 @@
   }
 
   button:hover,
-  .busca button:hover,
   .barra-categorias button:hover,
   .cartaoproduto button:hover {
     background-color: var(--cor-marca-forte);
   }
 
-  .barra-categorias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaco-1);
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--espaco-3);
-  }
-
-  /* Container query — Reorganiza o cartão em duas colunas quando há espaço suficiente */
+  /* Container query — Cartão em duas colunas */
   @container (min-width: 22rem) {
     .cartaoproduto article {
       display: grid;
@@ -78,18 +90,12 @@
     }
   }
 
-  /* Foco do teclado e Acessibilidade */
+  /* Acessibilidade e Foco */
   :focus-visible {
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
   }
 
-  header :focus-visible,
-  .pagina-catalogo > nav :focus-visible {
-    outline-color: var(--cor-sobre-marca);
-  }
-
-  /* :has() — Destaca o cartão com contorno quando o botão interno recebe foco */
   .cartaoproduto:has(button:focus-visible) {
     outline: 3px solid var(--cor-foco);
     outline-offset: 2px;
