@@ -19,23 +19,19 @@
   p { margin-bottom: var(--espaco-2); max-width: 65ch; }
   a { color: var(--cor-marca); }
 
-  /* Estilização da Marca / Cabeçalho e Navegação */
-  header, .cabecalho-site {
+  /* Cor de fundo da marca para o Cabeçalho e Navegação */
+  header, .cabecalho-site, nav {
     background-color: var(--cor-marca);
     color: var(--cor-sobre-marca);
     padding: var(--espaco-2);
   }
 
-  header h1, .cabecalho-site h1 {
-    color: var(--cor-sobre-marca);
-  }
-
-  nav a, .menu a {
+  header h1, .cabecalho-site h1, header a, nav a {
     color: var(--cor-sobre-marca);
   }
 
   /* Estrutura de Layout Grid */
-  .pagina-catalogo {
+  body, .pagina-catalogo {
     display: grid;
     grid-template-areas:
       "cabecalho"
@@ -46,22 +42,14 @@
     gap: var(--espaco-3);
   }
 
-  .pagina-catalogo header, .pagina-catalogo > header { grid-area: cabecalho; }
-  .pagina-catalogo nav, .pagina-catalogo > nav { grid-area: menu; }
-  .pagina-catalogo main, .pagina-catalogo > main { grid-area: conteudo; min-width: 0; }
-  .pagina-catalogo aside, .pagina-catalogo > aside { grid-area: lateral; }
-  .pagina-catalogo footer, .pagina-catalogo > footer { grid-area: rodape; }
-
-  main .lista-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    gap: var(--espaco-2);
-  }
-
-  .lista-produtos .destaque { grid-column: 1 / -1; }
+  header, .cabecalho-site { grid-area: cabecalho; }
+  nav { grid-area: menu; }
+  main { grid-area: conteudo; min-width: 0; }
+  aside { grid-area: lateral; }
+  footer, .rodape-site { grid-area: rodape; }
 
   @media (min-width: 56rem) {
-    .pagina-catalogo {
+    body, .pagina-catalogo {
       grid-template-columns: 12rem 1fr 16rem;
       grid-template-areas:
         "cabecalho cabecalho cabecalho"
