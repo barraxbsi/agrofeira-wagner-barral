@@ -124,13 +124,14 @@ a {
   font-size: var(--tamanho-texto);
 }
 
+/* Exemplo de agrupamento de botões */
 .busca button,
-.formulario-cadastro button {
+.cartaoproduto button {
   background-color: var(--cor-marca);
-  color: var(--cor-sobremarca);
+  color: var(--cor-sobre-marca);
   border: none;
   border-radius: var(--raio);
-  padding: 0.5em 1em;
+  padding: var(--espaco-1) var(--espaco-2);
   cursor: pointer;
 }
 
