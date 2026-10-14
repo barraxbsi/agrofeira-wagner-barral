@@ -1,63 +1,58 @@
 @layer componentes {
-
-  /* 1. Limpeza de listas */
-  ul, ol, li {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  /* Menu Lateral */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  /* 2. Barra de Categorias e Filtros (Remove o fundo grande e coloca em pílulas) */
-  .barra-categorias,
-  main nav,
-  main section > ul:first-of-type,
-  main header + ul {
-    background-color: transparent !important;
-    background: none !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    flex-direction: row !important;
-    gap: 0.5rem !important;
-    padding: 0 !important;
-    margin-bottom: 1.5rem !important;
+  .menu a {
+    color: var(--cor-sobre-marca);
+    text-decoration: none;
+    font-weight: bold;
   }
 
-  /* Força cada item de filtro a ser uma pílula arredondada isolada */
-  .barra-categorias li,
-  main nav li,
-  main section > ul:first-of-type li {
-    background-color: transparent !important;
-    display: inline-block !important;
+  /* Remove marcadores de lista dos produtos */
+  .lista-produtos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-3);
   }
 
-  .barra-categorias a,
-  .barra-categorias button,
-  main nav a,
-  main nav button,
-  main section > ul:first-of-type a,
-  main section > ul:first-of-type button {
-    background-color: var(--cor-marca) !important;
-    color: var(--cor-sobre-marca) !important;
-    border: none !important;
-    border-radius: 2rem !important;
-    padding: 0.4rem 1rem !important;
-    text-decoration: none !important;
-    font-size: 0.875rem !important;
-    font-weight: 500 !important;
-    display: inline-block !important;
-    cursor: pointer !important;
+  /* Barra de Categorias / Filtros em Pílula */
+  .barra-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-1);
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--espaco-3);
   }
 
-  /* Hover dos botões de pílula */
-  .barra-categorias a:hover,
-  .barra-categorias button:hover,
-  main nav a:hover,
-  main section > ul:first-of-type a:hover {
-    background-color: var(--cor-marca-forte) !important;
+  .barra-categorias button {
+    background-color: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
   }
 
-  /* 3. Cartões de Produtos */
-  .cartaoproduto, article {
+  .barra-categorias button:hover {
+    background-color: var(--cor-marca-forte);
+  }
+
+  /* Cartão do Produto */
+  .cartao-produto {
     background-color: var(--cor-superficie);
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio);
@@ -65,15 +60,14 @@
     container-type: inline-size;
   }
 
-  .cartaoproduto img, article img {
+  .cartao-produto img {
     border-radius: var(--raio);
     width: 100%;
     height: auto;
     object-fit: cover;
   }
 
-  /* Botão "Adicionar" dos produtos */
-  .cartaoproduto button, article button, aside button {
+  .cartao-produto button {
     background-color: var(--cor-marca);
     color: var(--cor-sobre-marca);
     border: none;
@@ -83,19 +77,33 @@
     margin-top: var(--espaco-1);
   }
 
-  /* Container Queries */
+  .cartao-produto button:hover {
+    background-color: var(--cor-marca-forte);
+  }
+
+  /* Container Queries - Layout interno do cartão em 2 colunas */
   @container (min-width: 22rem) {
-    .cartaoproduto article, article {
+    .cartao-produto article {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--espaco-2);
       align-items: start;
     }
+
+    .cartao-produto img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  /* Acessibilidade */
+  /* Foco e Acessibilidade */
   :focus-visible {
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
+  }
+
+  .cartao-produto:has(button:focus-visible) {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
   }
 }
