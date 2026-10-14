@@ -308,6 +308,28 @@ ul.barra-categorias {
   list-style: none;
   padding: 0;
   margin-bottom: var(--espaco-3);
+
+}
+/* Passo 6 — O cartão que se adapta ao espaço */
+
+/* O cartão (li) define o contêiner de medida */
+.cartaoproduto {
+  container-type: inline-size;
+}
+
+/* Container query — Quando o cartão tem mais de 22rem de largura, a foto fica ao lado do texto */
+@container (min-width: 22rem) {
+  .cartaoproduto article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaco-2);
+    align-items: start;
+  }
+
+  .cartaoproduto img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .pagina-catalogo nav a {
   color: var(--cor-sobre-marca);
