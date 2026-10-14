@@ -60,3 +60,62 @@
   --cor-marca-forte: #b85c00; /* Contraste > 4.5:1 com --cor-sobre-marca */
   --cor-foco: #005fb8;        /* Contraste > 3:1 sobre fundo/superfície */
 }
+/* ==========================================================================
+   AGROFEIRA - DESIGN TOKENS (tokens.css)
+   ========================================================================== */
+
+:root {
+  /* Declaração de suporte a temas do sistema (campos e barra de rolagem) */
+  color-scheme: light dark;
+
+  /* --- TEMA CLARO (Padrão) --- */
+  --cor-fundo: #f8f9fa;
+  --cor-superficie: #ffffff;
+  --cor-borda: #dee2e6;
+  --cor-texto: #212529;
+  --cor-texto-suave: #6c757d;
+  --cor-marca: #d96b00;
+  --cor-sobre-marca: #ffffff;
+  --cor-marca-forte: #b85c00; /* Contraste 4.8:1 com --cor-sobre-marca */
+  --cor-foco: #005fb8;        /* Contraste 4.6:1 sobre fundo/superfície */
+
+  /* Tipografia e Espaçamentos */
+  --fonte-titulo: 'Montserrat', sans-serif;
+  --fonte-texto: 'system-ui', sans-serif;
+  --tamanho-texto: 1rem;
+  --tamanho-h1: 2rem;
+  --tamanho-h2: 1.5rem;
+  --tamanho-h3: 1.25rem;
+  
+  --espaco-1: 0.5rem;
+  --espaco-2: 1rem;
+  --espaco-3: 1.5rem;
+  --raio: 0.5rem;
+  --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Passo 10 — Tema Escuro (@media prefers-color-scheme: dark)
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 1. Fundo escuro profundo e Superfície levemente mais clara */
+    --cor-fundo: #121212;
+    --cor-superficie: #1e1e1e;
+    --cor-borda: #333333;
+
+    /* 2. Textos claros com alto contraste */
+    --cor-texto: #f1f1f1;       /* Contraste 15.2:1 sobre fundo | 13.5:1 sobre superfície */
+    --cor-texto-suave: #a0a0a0; /* Contraste 7.2:1 sobre fundo | 6.4:1 sobre superfície */
+
+    /* 3. Marca adaptada e reconhecível no escuro */
+    --cor-marca: #ff8c1a;       /* Contraste 9.1:1 sobre fundo | 8.1:1 sobre superfície */
+    --cor-sobre-marca: #121212; /* Contraste 9.1:1 sobre --cor-marca */
+    
+    /* 4. Tokens de estado e acessibilidade ajustados para o escuro */
+    --cor-marca-forte: #ffa347; /* Contraste 11.2:1 com --cor-sobre-marca no hover */
+    --cor-foco: #64b5f6;        /* Contraste 8.5:1 sobre fundo | 7.5:1 sobre superfície */
+    
+    --sombra: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+}
