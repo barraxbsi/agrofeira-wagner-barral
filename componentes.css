@@ -1,103 +1,89 @@
 @layer componentes {
-  /* Menu Lateral */
-  .menu, nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-2);
-  }
 
-  .menu a {
-    color: var(--cor-sobre-marca);
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  /* Listas de Produtos (remove marcadores da lista) */
-  .lista-produtos, main ul, aside ul {
-    list-style: none;
+  /* 1. Limpeza geral de listas */
+  ul, ol, li {
+    list-style: none !important;
     padding: 0;
     margin: 0;
   }
 
-  /* Barra de Categorias e Filtros (Botões em Pílula) */
-  .barra-categorias, .filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaco-1);
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--espaco-3);
-    background: transparent;
+  /* 2. Barra de Categorias / Filtros como Pílulas Horizontais */
+  .barra-categorias,
+  main section ul:first-of-type,
+  main nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--espaco-1, 0.5rem) !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin-bottom: var(--espaco-3, 1.5rem) !important;
   }
 
-  .barra-categorias button, .filtros button, .barra-categorias a {
-    background-color: var(--cor-marca);
-    color: var(--cor-sobre-marca);
-    border: none;
-    border-radius: 2rem;
-    padding: 0.4rem 1rem;
-    cursor: pointer;
-    font-weight: 500;
+  /* Botões e links dentro da barra de filtros */
+  .barra-categorias button,
+  .barra-categorias a,
+  main section ul:first-of-type button,
+  main section ul:first-of-type a,
+  main nav ul a {
+    background-color: var(--cor-marca) !important;
+    color: var(--cor-sobre-marca) !important;
+    border: none !important;
+    border-radius: 2rem !important;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    display: inline-block !important;
   }
 
-  /* Cartão do Produto */
-  .cartaoproduto {
+  /* Hover nas pílulas */
+  .barra-categorias button:hover,
+  .barra-categorias a:hover,
+  main section ul:first-of-type button:hover,
+  main section ul:first-of-type a:hover {
+    background-color: var(--cor-marca-forte) !important;
+  }
+
+  /* 3. Cartão do Produto */
+  .cartaoproduto, article {
     background-color: var(--cor-superficie);
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio);
-    box-shadow: var(--sombra);
     padding: var(--espaco-2);
     container-type: inline-size;
   }
 
-  .cartaoproduto img {
+  .cartaoproduto img, article img {
     border-radius: var(--raio);
     width: 100%;
     height: auto;
     object-fit: cover;
   }
 
-  .cartaoproduto button {
+  /* Botão "Adicionar" dentro dos produtos */
+  .cartaoproduto button, article button {
     background-color: var(--cor-marca);
     color: var(--cor-sobre-marca);
     border: none;
     border-radius: var(--raio);
     padding: var(--espaco-1) var(--espaco-2);
     cursor: pointer;
+    margin-top: var(--espaco-1);
   }
 
-  button:hover,
-  .barra-categorias button:hover,
-  .cartaoproduto button:hover {
-    background-color: var(--cor-marca-forte);
-  }
-
-  /* Container query — Cartão em duas colunas */
+  /* Container Query para Cartões em 2 colunas */
   @container (min-width: 22rem) {
-    .cartaoproduto article {
+    .cartaoproduto article, article {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--espaco-2);
       align-items: start;
     }
-
-    .cartaoproduto img {
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
-  /* Acessibilidade e Foco */
+  /* Acessibilidade */
   :focus-visible {
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
-  }
-
-  .cartaoproduto:has(button:focus-visible) {
-    outline: 3px solid var(--cor-foco);
-    outline-offset: 2px;
   }
 }
