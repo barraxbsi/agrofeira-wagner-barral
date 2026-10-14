@@ -77,3 +77,24 @@
     outline-offset: -3px;
   }
 }
+@layer componentes {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-2);
+    list-style: none;
+    padding: 0;
+    margin: var(--espaco-1) 0 0 0;
+  }
+
+  .menu a {
+    color: var(--cor-sobre-marca);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .menu a:hover,
+  .menu a:focus-visible {
+    text-decoration: underline;
+  }
+}
