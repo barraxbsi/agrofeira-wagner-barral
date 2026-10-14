@@ -104,7 +104,8 @@
     outline-color: var(--cor-sobre-marca);
   }
 
-  /* O cartão destaca-se quando o botão interno recebe foco via :has() */
+/* Passo 8 — O cartão que sabe que o botão está com o foco */
+  /* :has() — Destaca o cartão inteiro com contorno quando o seu botão interno recebe o foco pelo teclado */
   .cartaoproduto:has(button:focus-visible) {
     outline: 3px solid var(--cor-foco);
     outline-offset: 2px;
