@@ -309,3 +309,6 @@ ul.barra-categorias {
   padding: 0;
   margin-bottom: var(--espaco-3);
 }
+.pagina-catalogo nav a {
+  color: var(--cor-sobre-marca);
+}
