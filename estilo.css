@@ -67,16 +67,21 @@
     margin-bottom: var(--espaco-3);
   }
 
-  /* Container Query do cartão em destaque */
+  /* Passo 6 — O cartão que se adapta ao espaço (Container Queries) */
+  .cartaoproduto {
+    container-type: inline-size;
+  }
+
+  /* Container query — Reorganiza o cartão em duas colunas quando há espaço suficiente na grelha */
   @container (min-width: 22rem) {
-    li.destaque article, .destaque article {
+    .cartaoproduto article {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--espaco-2);
       align-items: start;
     }
 
-    li.destaque img, .destaque img {
+    .cartaoproduto img {
       height: 100%;
       object-fit: cover;
     }
