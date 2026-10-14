@@ -310,13 +310,15 @@ button,
 }
 
 /* Passo 6 — O cartão que se adapta ao espaço (Container Queries) */
-.cartaoproduto {
+.cartaoproduto,
+.cartao-produto {
   container-type: inline-size;
 }
 
-/* Quando o cartão em destaque ultrapassa 22rem, alinha a foto e o conteúdo lado a lado */
+/* Quando o cartão em destaque ultrapassa 22rem, deita a foto e o texto */
 @container (min-width: 22rem) {
-  .destaque article {
+  .destaque,
+  li.destaque {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--espaco-2);
