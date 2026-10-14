@@ -310,27 +310,29 @@ button,
 }
 
 /* Passo 6 — O cartão que se adapta ao espaço (Container Queries) */
+
+/* O item da lista define o contêiner de medida */
 .cartaoproduto,
-.cartao-produto {
+li.cartaoproduto {
   container-type: inline-size;
 }
 
-/* Quando o cartão em destaque ultrapassa 22rem, deita a foto e o texto */
+/* Quando o cartão em destaque tem espaço suficiente, força o grid de 2 colunas no article interno */
 @container (min-width: 22rem) {
-  .destaque,
-  li.destaque {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  li.destaque article,
+  .destaque article {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: var(--espaco-2);
     align-items: start;
   }
 
+  li.destaque img,
   .destaque img {
     height: 100%;
     object-fit: cover;
   }
 }
-
 /* Passo 7, 8 e 9 — Estados, Foco e Link de Pular */
 
 /* Estado hover dos botões */
