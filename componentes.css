@@ -15,17 +15,7 @@
     font-weight: bold;
   }
 
-  /* Remove marcadores de lista dos produtos */
-  .lista-produtos {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-3);
-  }
-
-  /* Barra de Categorias / Filtros em Pílula */
+  /* Barra de Categorias / Filtros em Pílulas */
   .barra-categorias {
     display: flex;
     flex-wrap: wrap;
@@ -43,12 +33,32 @@
     padding: 0.4rem 1rem;
     cursor: pointer;
     font-family: inherit;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 500;
   }
 
   .barra-categorias button:hover {
     background-color: var(--cor-marca-forte);
+  }
+
+  /* Lista Geral de Produtos */
+  .lista-produtos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaco-3);
+  }
+
+  /* Disposição dos Produtos em 2 colunas para o conteúdo principal em telas maiores */
+  main .lista-produtos {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+
+  /* Cartão Destaque ocupa a largura inteira (2 colunas) */
+  .cartao-produto.destaque {
+    grid-column: 1 / -1;
   }
 
   /* Cartão do Produto */
@@ -57,6 +67,7 @@
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio);
     padding: var(--espaco-2);
+    box-shadow: var(--sombra);
     container-type: inline-size;
   }
 
@@ -75,25 +86,31 @@
     padding: var(--espaco-1) var(--espaco-2);
     cursor: pointer;
     margin-top: var(--espaco-1);
+    width: 100%;
   }
 
   .cartao-produto button:hover {
     background-color: var(--cor-marca-forte);
   }
 
-  /* Container Queries - Layout interno do cartão em 2 colunas */
+  /* Container Query - Layout horizontal do Cartão Destaque */
   @container (min-width: 22rem) {
-    .cartao-produto article {
+    .cartao-produto.destaque article {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--espaco-2);
       align-items: start;
     }
 
-    .cartao-produto img {
+    .cartao-produto.destaque img {
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  /* Lateral (Mais Pedidos) mantem cartões em 1 coluna */
+  .lateral .lista-produtos {
+    grid-template-columns: 1fr;
   }
 
   /* Foco e Acessibilidade */
