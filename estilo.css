@@ -150,15 +150,23 @@
     }
   }
 
+  /* Passo 9 — O link de pular acessível */
   .pular {
     position: absolute;
     top: -100rem;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     background-color: var(--cor-marca);
     color: var(--cor-sobre-marca);
     padding: var(--espaco-2);
+    text-decoration: none;
+    font-weight: bold;
   }
 
-  .pular:focus { top: 0; }
+  /* Quando recebe o foco do teclado, surge no topo esquerdo */
+  .pular:focus-visible {
+    top: 0;
+    outline: 3px solid var(--cor-sobre-marca);
+    outline-offset: -3px;
+  }
 }
