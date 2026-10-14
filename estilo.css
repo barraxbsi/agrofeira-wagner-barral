@@ -266,28 +266,28 @@ button,
   gap: var(--espaco-3);
 }
 
-.pagina-catalogo header { grid-area: cabecalho; }
+.pagina-catalogo > header { grid-area: cabecalho; }
 
-/* Menu principal com fundo da marca */
-.pagina-catalogo nav:not(.barra-categorias) { 
+/* Aplica o fundo da marca APENAS ao menu principal (filho direto do body) */
+.pagina-catalogo > nav { 
   grid-area: menu;
   background-color: var(--cor-marca);
   padding: var(--espaco-2);
 }
 
-.pagina-catalogo nav:not(.barra-categorias) a {
+.pagina-catalogo > nav a {
   color: var(--cor-sobre-marca);
 }
 
-.pagina-catalogo main { 
+.pagina-catalogo > main { 
   grid-area: conteudo; 
   min-width: 0; 
 }
 
-.pagina-catalogo aside { grid-area: lateral; }
-.pagina-catalogo footer { grid-area: rodape; }
+.pagina-catalogo > aside { grid-area: lateral; }
+.pagina-catalogo > footer { grid-area: rodape; }
 
-/* Casca em 3 colunas para telas largas */
+/* Casca em 3 colunas para ecrãs largos */
 @media (min-width: 56rem) {
   .pagina-catalogo {
     grid-template-columns: 12rem 1fr 16rem;
@@ -299,44 +299,39 @@ button,
 }
 
 /* Passo 5 — A barra de categorias */
-.barra-categorias,
-nav.barra-categorias ul,
-ul.barra-categorias {
+.barra-categorias {
   display: flex;
   flex-wrap: wrap;
   gap: var(--espaco-1);
   list-style: none;
   padding: 0;
   margin-bottom: var(--espaco-3);
-
+  background-color: transparent; /* Mantém o fundo transparente */
 }
-/* Passo 6 — O cartão que se adapta ao espaço */
 
-/* O cartão (li) define o contêiner de medida */
+/* Passo 6 — O cartão que se adapta ao espaço (Container Queries) */
 .cartaoproduto {
   container-type: inline-size;
 }
 
-/* Container query — Quando o cartão tem mais de 22rem de largura, a foto fica ao lado do texto */
+/* Quando o cartão em destaque ultrapassa 22rem, alinha a foto e o texto lado a lado */
 @container (min-width: 22rem) {
-  .cartaoproduto article {
+  .destaque article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--espaco-2);
     align-items: start;
   }
 
-  .cartaoproduto img {
+  .destaque img {
     height: 100%;
     object-fit: cover;
   }
 }
-.pagina-catalogo nav a {
-  color: var(--cor-sobre-marca);
-}
-/* Passo 7 — Os estados e o foco */
 
-/* Estado hover em todos os botões do site */
+/* Passo 7, 8 e 9 — Estados, Foco e Link de Pular */
+
+/* Estado hover dos botões */
 button:hover,
 .busca button:hover,
 .barra-categorias button:hover,
@@ -344,28 +339,25 @@ button:hover,
   background-color: var(--cor-marca-forte);
 }
 
-/* Anel de foco visível e afastado para navegação via teclado */
+/* Anel de foco visível */
 :focus-visible {
   outline: 3px solid var(--cor-foco);
   outline-offset: 3px;
 }
 
-/* Foco sobre a faixa da marca (cabeçalho, menu e link de pular sobre o fundo marrom) */
 .cabecalho-site :focus-visible,
 .pagina-catalogo > nav :focus-visible,
 .pular:focus-visible {
   outline-color: var(--cor-sobre-marca);
 }
-/* Passo 8 — O cartão que sabe que o botão está com o foco */
 
-/* :has() — Destaca o cartão inteiro quando o botão dentro dele recebe o foco do teclado */
+/* :has() — Contorno no cartão quando o botão tem foco */
 .cartaoproduto:has(button:focus-visible) {
   outline: 3px solid var(--cor-foco);
   outline-offset: 2px;
 }
-/* Passo 9 — O link de pular */
 
-/* Escondido fora da tela por padrão; aparece no canto superior esquerdo ao receber o foco via Tab */
+/* Link de pular escondido que surge no Tab */
 .pular {
   position: absolute;
   top: -100rem;
