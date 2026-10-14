@@ -1,0 +1,74 @@
+@layer componentes {
+  .cartaoproduto {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: var(--espaco-2);
+    container-type: inline-size;
+  }
+
+  .cartaoproduto img {
+    border-radius: var(--raio);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  button, .busca button, .barra-categorias button, .cartaoproduto button {
+    background-color: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    border: none;
+    border-radius: var(--raio);
+    padding: var(--espaco-1) var(--espaco-2);
+    cursor: pointer;
+  }
+
+  button:hover,
+  .busca button:hover,
+  .barra-categorias button:hover,
+  .cartaoproduto button:hover {
+    background-color: var(--cor-marca-forte);
+  }
+
+  .barra-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-1);
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--espaco-3);
+  }
+
+  /* Container query — Reorganiza o cartão em duas colunas quando há espaço suficiente */
+  @container (min-width: 22rem) {
+    .cartaoproduto article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--espaco-2);
+      align-items: start;
+    }
+
+    .cartaoproduto img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* Foco do teclado e Acessibilidade */
+  :focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+  }
+
+  header :focus-visible,
+  .pagina-catalogo > nav :focus-visible {
+    outline-color: var(--cor-sobre-marca);
+  }
+
+  /* :has() — Destaca o cartão com contorno quando o botão interno recebe foco */
+  .cartaoproduto:has(button:focus-visible) {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
+  }
+}
