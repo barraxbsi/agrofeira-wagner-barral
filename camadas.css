@@ -1,1 +1,6 @@
 @layer reset, base, componentes, utilitarios;
+@import url('tokens.css');
+@import url('reset.css');
+@import url('base.css');
+@import url('componentes.css');
+@import url('utilitarios.css');
