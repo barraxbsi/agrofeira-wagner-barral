@@ -46,3 +46,13 @@ h3 {
     font-style: normal;
   }
 }
+
+@layer reset {
+
+  /* Todo o conteúdo antigo do reset.css aqui dentro */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
