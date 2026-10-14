@@ -1,80 +1,87 @@
+/* base.css — o chão do projeto: a página, os elementos e o anel de foco */
+
 @layer base {
-  body, .pagina-catalogo {
+  body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: var(--fonte-texto);
     font-size: var(--tamanho-texto);
-    line-height: 1.5;
   }
 
-  h1, h2, h3 {
-    font-family: var(--fonte-titulo);
+  h1,
+  h2,
+  h3 {
     line-height: 1.2;
   }
 
-  h1 { font-size: var(--tamanho-h1); }
-  h2 { font-size: var(--tamanho-h2); color: var(--cor-marca); margin-top: var(--espaco-3); margin-bottom: var(--espaco-1); }
-  h3 { font-size: var(--tamanho-h3); color: var(--cor-marca); margin-top: var(--espaco-2); margin-bottom: var(--espaco-1); }
-
-  p { margin-bottom: var(--espaco-2); max-width: 65ch; }
-  a { color: var(--cor-marca); }
-
-  /* Aplica a cor da marca APENAS ao topo e ao menu lateral principal */
-  header, .cabecalho-site, body > nav {
-    background-color: var(--cor-marca);
-    color: var(--cor-sobre-marca);
-    padding: var(--espaco-2);
+  h1 {
+    font-size: var(--tamanho-h1);
   }
 
-  header h1, .cabecalho-site h1, header a, body > nav a {
-    color: var(--cor-sobre-marca);
+  h2 {
+    font-size: var(--tamanho-h2);
+    color: var(--cor-marca);
   }
 
-  /* Estrutura Grid - Mobile */
-  body, .pagina-catalogo {
+  h3 {
+    font-size: var(--tamanho-h3);
+    color: var(--cor-marca);
+  }
+
+  main {
+    padding: var(--espaco-3) var(--espaco-2);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cor-foco);
+    outline-offset: 2px;
+  }
+
+  .cabecalho-site :focus-visible,
+  nav :focus-visible {
+    outline-color: var(--cor-sobre-marca);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-3);
+  }
+
+  body {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "cabecalho"
       "menu"
       "conteudo"
       "lateral"
       "rodape";
-    gap: var(--espaco-3);
+    gap: var(--espaco-2);
   }
 
-  header, .cabecalho-site { grid-area: cabecalho; }
-  body > nav { grid-area: menu; }
-  main { grid-area: conteudo; min-width: 0; }
-  aside { grid-area: lateral; }
-  footer, .rodape-site { grid-area: rodape; }
+  .cabecalho-site { grid-area: cabecalho; }
+  nav             { grid-area: menu; }
+  main            { grid-area: conteudo; }
+  aside           { grid-area: lateral; }
+  .rodape-site    { grid-area: rodape; }
 
-  /* Estrutura Grid - Desktop (1024px / 56rem) */
-  @media (min-width: 56rem) {
-    body, .pagina-catalogo {
-      grid-template-columns: 16rem 1fr 16rem;
-      grid-template-areas:
-        "cabecalho conteudo lateral"
-        "menu      conteudo lateral"
-        "rodape    rodape   rodape";
-      align-items: start;
-    }
-  }
-
-  .pular {
-    position: absolute;
-    top: -100rem;
-    left: 0;
-    z-index: 100;
+  nav {
     background-color: var(--cor-marca);
-    color: var(--cor-sobre-marca);
     padding: var(--espaco-2);
-    text-decoration: none;
-    font-weight: bold;
   }
 
-  .pular:focus-visible {
-    top: 0;
-    outline: 3px solid var(--cor-sobre-marca);
-    outline-offset: -3px;
+  aside {
+    padding: var(--espaco-3) var(--espaco-2);
+  }
+
+  @media (min-width: 42rem) {
+    body {
+      grid-template-columns: 10rem minmax(0, 1fr) 14rem;
+      grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "menu      conteudo  lateral"
+        "rodape    rodape    rodape";
+    }
   }
 }
