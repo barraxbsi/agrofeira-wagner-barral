@@ -16,6 +16,8 @@
   --cor-sobremarca: #ffffff;  
   
   --cor-borda: #e5dbc9;       /* Borda bege suave */
+  --cor-marca-forte: #4d2600; /* Mais escuro para o hover do botão (mín. 4,5:1 de contraste com a letra clara) */
+  --cor-foco: #005fcc;        /* Azul bem visível para o anel de foco (mín. 3:1 sobre o fundo/superfície) */
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
