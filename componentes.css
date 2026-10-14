@@ -1,4 +1,26 @@
 @layer componentes {
+  /* Estilização do Menu de Navegação */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu a {
+    color: var(--cor-sobre-marca);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .menu a:hover,
+  .menu a:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* Cartões de Produtos */
   .cartaoproduto {
     background-color: var(--cor-superficie);
     border: 1px solid var(--cor-borda);
@@ -15,6 +37,7 @@
     object-fit: cover;
   }
 
+  /* Botões e Filtros */
   button, .busca button, .barra-categorias button, .cartaoproduto button {
     background-color: var(--cor-marca);
     color: var(--cor-sobre-marca);
