@@ -1,24 +1,29 @@
 :root {
-  
+
   /* Cores — Tom Marrom Amarelado / Terra */
-  --cor-fundo: #f9f6ef;       /* Creme claro quente */
-  --corsuperficie: #ffffff;   /* Branco para os cartões */
-  
+  --cor-fundo: #f9f6ef;
+  /* Creme claro quente */
+  --corsuperficie: #ffffff;
+  /* Branco para os cartões */
+
   /* Texto sobre Fundo: 14.8:1 (AAA) | Texto sobre Superfície: 16.2:1 (AAA) */
-  --cor-texto: #241c12;       
-  
+  --cor-texto: #241c12;
+
   /* Texto suave sobre Fundo (legenda): 6.8:1 (AA) */
-  --cor-textosuave: #5c5043;   
-  
+  --cor-textosuave: #5c5043;
+
   /* Marca sobre Fundo (títulos h2/h3): 7.2:1 (AAA) */
-  --cor-marca: #7a521a;       
-  
+  --cor-marca: #7a521a;
+
   /* Sobre-marca sobre Marca (links do menu / h1): 8.7:1 (AAA) */
-  --cor-sobremarca: #ffffff;  
-  
-  --cor-borda: #e5dbc9;       /* Borda bege suave */
-  --cor-marca-forte: #4d2600; /* Mais escuro para o hover do botão (mín. 4,5:1 de contraste com a letra clara) */
-  --cor-foco: #005fcc;        /* Azul bem visível para o anel de foco (mín. 3:1 sobre o fundo/superfície) */
+  --cor-sobremarca: #ffffff;
+
+  --cor-borda: #e5dbc9;
+  /* Borda bege suave */
+  --cor-marca-forte: #4d2600;
+  /* Mais escuro para o hover do botão (mín. 4,5:1 de contraste com a letra clara) */
+  --cor-foco: #005fcc;
+  /* Azul bem visível para o anel de foco (mín. 3:1 sobre o fundo/superfície) */
 
   /* Tipografia */
   --fonte-texto: system-ui, -apple-system, sans-serif;
@@ -38,28 +43,41 @@
   --raio: 8px;
   --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
 /* Passo 10 — O tema escuro */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --cor-fundo: #121212;         /* 15.2:1 com o texto claro */
-    --cor-superficie: #1e1e1e;    /* 13.8:1 com o texto claro */
-    --cor-texto: #e0e0e0;         /* 15.2:1 sobre o fundo */
-    --cor-textosuave: #b0b0b0;    /* 9.1:1 sobre o fundo */
-    --cor-marca: #d9822b;         /* 6.3:1 sobre o fundo */
-    --cor-sobre-marca: #121212;   /* 7.5:1 sobre a marca */
+    --cor-fundo: #121212;
+    /* 15.2:1 com o texto claro */
+    --cor-superficie: #1e1e1e;
+    /* 13.8:1 com o texto claro */
+    --cor-texto: #e0e0e0;
+    /* 15.2:1 sobre o fundo */
+    --cor-textosuave: #b0b0b0;
+    /* 9.1:1 sobre o fundo */
+    --cor-marca: #d9822b;
+    /* 6.3:1 sobre o fundo */
+    --cor-sobre-marca: #121212;
+    /* 7.5:1 sobre a marca */
     --cor-borda: #333333;
-    --cor-marca-forte: #f09538;   /* 8.2:1 para o hover no escuro */
-    --cor-foco: #66b2ff;          /* 4.8:1 sobre o fundo escuro */
+    --cor-marca-forte: #f09538;
+    /* 8.2:1 para o hover no escuro */
+    --cor-foco: #66b2ff;
+    /* 4.8:1 sobre o fundo escuro */
   }
 }
+
 :root {
   /* Tokens existentes... */
 
   /* Passo 7 — Novos tokens de estado */
-  --cor-marca-forte: #b85c00; /* Contraste > 4.5:1 com --cor-sobre-marca */
-  --cor-foco: #005fb8;        /* Contraste > 3:1 sobre fundo/superfície */
+  --cor-marca-forte: #b85c00;
+  /* Contraste > 4.5:1 com --cor-sobre-marca */
+  --cor-foco: #005fb8;
+  /* Contraste > 3:1 sobre fundo/superfície */
 }
+
 /* ==========================================================================
    AGROFEIRA - DESIGN TOKENS (tokens.css)
    ========================================================================== */
@@ -76,8 +94,10 @@
   --cor-texto-suave: #6c757d;
   --cor-marca: #d96b00;
   --cor-sobre-marca: #ffffff;
-  --cor-marca-forte: #b85c00; /* Contraste 4.8:1 com --cor-sobre-marca */
-  --cor-foco: #005fb8;        /* Contraste 4.6:1 sobre fundo/superfície */
+  --cor-marca-forte: #b85c00;
+  /* Contraste 4.8:1 com --cor-sobre-marca */
+  --cor-foco: #005fb8;
+  /* Contraste 4.6:1 sobre fundo/superfície */
 
   /* Tipografia e Espaçamentos */
   --fonte-titulo: 'Montserrat', sans-serif;
@@ -86,7 +106,7 @@
   --tamanho-h1: 2rem;
   --tamanho-h2: 1.5rem;
   --tamanho-h3: 1.25rem;
-  
+
   --espaco-1: 0.5rem;
   --espaco-2: 1rem;
   --espaco-3: 1.5rem;
@@ -105,17 +125,67 @@
     --cor-borda: #333333;
 
     /* 2. Textos claros com alto contraste */
-    --cor-texto: #f1f1f1;       /* Contraste 15.2:1 sobre fundo | 13.5:1 sobre superfície */
-    --cor-texto-suave: #a0a0a0; /* Contraste 7.2:1 sobre fundo | 6.4:1 sobre superfície */
+    --cor-texto: #f1f1f1;
+    /* Contraste 15.2:1 sobre fundo | 13.5:1 sobre superfície */
+    --cor-texto-suave: #a0a0a0;
+    /* Contraste 7.2:1 sobre fundo | 6.4:1 sobre superfície */
 
     /* 3. Marca adaptada e reconhecível no escuro */
-    --cor-marca: #ff8c1a;       /* Contraste 9.1:1 sobre fundo | 8.1:1 sobre superfície */
-    --cor-sobre-marca: #121212; /* Contraste 9.1:1 sobre --cor-marca */
-    
+    --cor-marca: #ff8c1a;
+    /* Contraste 9.1:1 sobre fundo | 8.1:1 sobre superfície */
+    --cor-sobre-marca: #121212;
+    /* Contraste 9.1:1 sobre --cor-marca */
+
     /* 4. Tokens de estado e acessibilidade ajustados para o escuro */
-    --cor-marca-forte: #ffa347; /* Contraste 11.2:1 com --cor-sobre-marca no hover */
-    --cor-foco: #64b5f6;        /* Contraste 8.5:1 sobre fundo | 7.5:1 sobre superfície */
-    
+    --cor-marca-forte: #ffa347;
+    /* Contraste 11.2:1 com --cor-sobre-marca no hover */
+    --cor-foco: #64b5f6;
+    /* Contraste 8.5:1 sobre fundo | 7.5:1 sobre superfície */
+
     --sombra: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+
+    --cor-fundo: #f8f9fa;
+    --cor-superficie: #ffffff;
+    --cor-borda: #dee2e6;
+    --cor-texto: #212529;
+    --cor-texto-suave: #6c757d;
+    --cor-marca: #d96b00;
+    --cor-sobre-marca: #ffffff;
+    --cor-marca-forte: #b85c00;
+    --cor-foco: #005fb8;
+
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-texto: 'system-ui', sans-serif;
+    --tamanho-texto: 1rem;
+    --tamanho-h1: 2rem;
+    --tamanho-h2: 1.5rem;
+    --tamanho-h3: 1.25rem;
+
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --raio: 0.5rem;
+    --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --cor-fundo: #121212;
+      --cor-superficie: #1e1e1e;
+      --cor-borda: #333333;
+      --cor-texto: #f1f1f1;
+      --cor-texto-suave: #a0a0a0;
+      --cor-marca: #ff8c1a;
+      --cor-sobre-marca: #121212;
+      --cor-marca-forte: #ffa347;
+      --cor-foco: #64b5f6;
+      --sombra: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
   }
 }
