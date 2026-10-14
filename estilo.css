@@ -124,8 +124,10 @@ a {
   font-size: var(--tamanho-texto);
 }
 
-/* Exemplo de agrupamento de botões */
+
+/* Estilização unificada dos botões */
 .busca button,
+.barra-categorias button,
 .cartaoproduto button {
   background-color: var(--cor-marca);
   color: var(--cor-sobre-marca);
