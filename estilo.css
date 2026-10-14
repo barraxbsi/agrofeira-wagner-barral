@@ -241,6 +241,19 @@ aside .lista-produtos {
   font-weight: bold;
 }
 
+/* Estilização unificada de TODOS os botões */
+button,
+.busca button,
+.barra-categorias button,
+.cartaoproduto button {
+  background-color: var(--cor-marca);
+  color: var(--cor-sobre-marca);
+  border: none;
+  border-radius: var(--raio);
+  padding: var(--espaco-1) var(--espaco-2);
+  cursor: pointer;
+}
+
 /* Passo 4 — A casca da página (Mobile-First) */
 .pagina-catalogo {
   display: grid;
@@ -253,27 +266,28 @@ aside .lista-produtos {
   gap: var(--espaco-3);
 }
 
-.pagina-catalogo > header { grid-area: cabecalho; }
+.pagina-catalogo header { grid-area: cabecalho; }
 
-.pagina-catalogo > nav { 
+/* Menu principal com fundo da marca */
+.pagina-catalogo nav:not(.barra-categorias) { 
   grid-area: menu;
   background-color: var(--cor-marca);
   padding: var(--espaco-2);
 }
 
-.pagina-catalogo > nav a {
+.pagina-catalogo nav:not(.barra-categorias) a {
   color: var(--cor-sobre-marca);
 }
 
-.pagina-catalogo > main { 
+.pagina-catalogo main { 
   grid-area: conteudo; 
   min-width: 0; 
 }
 
-.pagina-catalogo > aside { grid-area: lateral; }
-.pagina-catalogo > footer { grid-area: rodape; }
+.pagina-catalogo aside { grid-area: lateral; }
+.pagina-catalogo footer { grid-area: rodape; }
 
-/* Casca em 3 colunas para ecrãs largos */
+/* Casca em 3 colunas para telas largas */
 @media (min-width: 56rem) {
   .pagina-catalogo {
     grid-template-columns: 12rem 1fr 16rem;
@@ -285,7 +299,9 @@ aside .lista-produtos {
 }
 
 /* Passo 5 — A barra de categorias */
-.barra-categorias {
+.barra-categorias,
+nav.barra-categorias ul,
+ul.barra-categorias {
   display: flex;
   flex-wrap: wrap;
   gap: var(--espaco-1);
