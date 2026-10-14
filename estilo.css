@@ -268,7 +268,7 @@ button,
 
 .pagina-catalogo > header { grid-area: cabecalho; }
 
-/* Aplica o fundo da marca APENAS ao menu principal (filho direto do body) */
+/* Aplica o fundo da marca EXCLUSIVAMENTE ao menu principal (filho direto do body) */
 .pagina-catalogo > nav { 
   grid-area: menu;
   background-color: var(--cor-marca);
@@ -306,7 +306,7 @@ button,
   list-style: none;
   padding: 0;
   margin-bottom: var(--espaco-3);
-  background-color: transparent; /* Mantém o fundo transparente */
+  background: none; /* Anula qualquer fundo herdado */
 }
 
 /* Passo 6 — O cartão que se adapta ao espaço (Container Queries) */
@@ -314,7 +314,7 @@ button,
   container-type: inline-size;
 }
 
-/* Quando o cartão em destaque ultrapassa 22rem, alinha a foto e o texto lado a lado */
+/* Quando o cartão em destaque ultrapassa 22rem, alinha a foto e o conteúdo lado a lado */
 @container (min-width: 22rem) {
   .destaque article {
     display: grid;
