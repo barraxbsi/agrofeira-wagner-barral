@@ -1,5 +1,5 @@
 @layer base {
-  body {
+  body, .pagina-catalogo {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: var(--fonte-texto);
@@ -30,7 +30,7 @@
     color: var(--cor-sobre-marca);
   }
 
-  /* Estrutura de Layout Grid */
+  /* Estrutura de Layout Grid - Mobile (360px) */
   body, .pagina-catalogo {
     display: grid;
     grid-template-areas:
@@ -48,13 +48,15 @@
   aside { grid-area: lateral; }
   footer, .rodape-site { grid-area: rodape; }
 
+  /* Estrutura de Layout Grid - Desktop (1024px / 56rem) */
   @media (min-width: 56rem) {
     body, .pagina-catalogo {
-      grid-template-columns: 12rem 1fr 16rem;
+      grid-template-columns: 14rem 1fr 16rem;
       grid-template-areas:
-        "cabecalho cabecalho cabecalho"
-        "menu      conteudo  lateral"
-        "rodape    rodape    rodape";
+        "cabecalho conteudo lateral"
+        "menu      conteudo lateral"
+        "rodape    rodape   rodape";
+      align-items: start;
     }
   }
 
@@ -75,26 +77,5 @@
     top: 0;
     outline: 3px solid var(--cor-sobre-marca);
     outline-offset: -3px;
-  }
-}
-@layer componentes {
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaco-2);
-    list-style: none;
-    padding: 0;
-    margin: var(--espaco-1) 0 0 0;
-  }
-
-  .menu a {
-    color: var(--cor-sobre-marca);
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .menu a:hover,
-  .menu a:focus-visible {
-    text-decoration: underline;
   }
 }
