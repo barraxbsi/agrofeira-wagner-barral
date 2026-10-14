@@ -19,7 +19,22 @@
   p { margin-bottom: var(--espaco-2); max-width: 65ch; }
   a { color: var(--cor-marca); }
 
-  /* Estrutura de Layout */
+  /* Estilização da Marca / Cabeçalho e Navegação */
+  header, .cabecalho-site {
+    background-color: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    padding: var(--espaco-2);
+  }
+
+  header h1, .cabecalho-site h1 {
+    color: var(--cor-sobre-marca);
+  }
+
+  nav a, .menu a {
+    color: var(--cor-sobre-marca);
+  }
+
+  /* Estrutura de Layout Grid */
   .pagina-catalogo {
     display: grid;
     grid-template-areas:
@@ -31,12 +46,11 @@
     gap: var(--espaco-3);
   }
 
-  .pagina-catalogo > header { grid-area: cabecalho; }
-  .pagina-catalogo > nav { grid-area: menu; background-color: var(--cor-marca); padding: var(--espaco-2); }
-  .pagina-catalogo > nav a { color: var(--cor-sobre-marca); }
-  .pagina-catalogo > main { grid-area: conteudo; min-width: 0; }
-  .pagina-catalogo > aside { grid-area: lateral; }
-  .pagina-catalogo > footer { grid-area: rodape; }
+  .pagina-catalogo header, .pagina-catalogo > header { grid-area: cabecalho; }
+  .pagina-catalogo nav, .pagina-catalogo > nav { grid-area: menu; }
+  .pagina-catalogo main, .pagina-catalogo > main { grid-area: conteudo; min-width: 0; }
+  .pagina-catalogo aside, .pagina-catalogo > aside { grid-area: lateral; }
+  .pagina-catalogo footer, .pagina-catalogo > footer { grid-area: rodape; }
 
   main .lista-produtos {
     display: grid;
