@@ -1,7 +1,7 @@
 /* ==========================================================================
    AGROFEIRA - FOLHA DE ESTILO PRINCIPAL (estilo.css)
    ========================================================================== */
-
+@layer reset, tokens, base, componentes, layout;
 /* Passo 5 — A Página Inteira */
 body {
   background-color: var(--cor-fundo);
