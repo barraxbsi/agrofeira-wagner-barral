@@ -7,9 +7,11 @@
     --cor-texto: #1f2a1f;
     --cor-texto-suave: #4a5a48;
     --cor-marca: #2e6b30;
+    --cor-marca-rgb: 46, 107, 48; /* cópia de --cor-marca */
     --cor-sobre-marca: #ffffff;
     --cor-borda: #d8d0bf;
     --cor-marca-forte: #1f4a21;
+    --cor-marca-forte-rgb: 31, 74, 33; /* cópia de --cor-marca-forte */
     --cor-foco: #1d4ed8;
     --cor-desligado: #e4ded1;
     --cor-sobre-desligado: #525c4f;
@@ -40,9 +42,11 @@
       --cor-texto: #e6efe4;
       --cor-texto-suave: #b2c1af;
       --cor-marca: #173f19;
+      --cor-marca-rgb: 23, 63, 25; /* cópia de --cor-marca */
       --cor-sobre-marca: #0f2410;
       --cor-borda: #3a4a3b;
       --cor-marca-forte: #a8dcab;
+      --cor-marca-forte-rgb: 168, 220, 171; /* cópia de --cor-marca-forte */
       --cor-foco: #93c5fd;
       --cor-desligado: #2a342b;
       --cor-sobre-desligado: #a3ae9f;
