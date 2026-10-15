@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Substitui pelo teu Nome Completo para aparecer no topo do PDF impresso -->
+    <title>Relatório Comparativo — O Teu Nome Completo</title>
+    
+    <!-- Folhas de estilo da aplicação (Apenas o estilo autoral, sem Bootstrap) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+    
+    <!-- Arquitetura CSS em Camadas -->
+    <link rel="stylesheet" href="camadas.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="utilitarios.css">
+</head>
+
+<body>
+    <!-- Atalho de acessibilidade para saltar para o conteúdo principal -->
+    <a href="#conteudo-principal" class="pular">Pular para o conteúdo</a>
+
+    <!-- Cabeçalho e Navegação Principal (Sem aria-current pois esta página não está no menu) -->
+    <header class="cabecalho-site">
+        <h1>AgroFeira</h1>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="safra.html">Safra</a></li>
+                <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal do Relatório -->
+    <main id="conteudo-principal">
+        <h2>Relatório Comparativo de Desempenho e Arquitetura</h2>
+
+        <!-- Dados Iniciais (Sem Título) -->
+        <p><strong>Nome completo e matrícula:</strong> O teu nome completo — Matrícula: 000000</p>
+        <p><strong>Endereço do repositório:</strong> <a href="https://github.com/teu-usuario/agrofeira">https://github.com/teu-usuario/agrofeira</a></p>
+        <p><strong>Endereços do site:</strong></p>
+        <ul>
+            <li>Início: <a href="index.html">index.html</a></li>
+            <li>Catálogo Autoral: <a href="catalogo.html">catalogo.html</a></li>
+            <li>Catálogo Bootstrap: <a href="catalogo-bootstrap.html">catalogo-bootstrap.html</a></li>
+        </ul>
+
+        <!-- Seção 1: O catálogo em três larguras -->
+        <h3>O catálogo em três larguras</h3>
+        <figure>
+            <img src="captura-1-360.png" alt="O catalogo-bootstrap.html em 360 pixels de largura com a barra do modo dispositivo visível" width="600" height="400">
+            <figcaption>Captura 1 — O catálogo Bootstrap em 360 px de largura.</figcaption>
+        </figure>
+        <figure>
+            <img src="captura-2-1200-antes.png" alt="O catalogo-bootstrap.html em 1200 pixels na versão original antes da customização" width="600" height="400">
+            <figcaption>Captura 2 — O catálogo Bootstrap em 1200 px (versão "antes").</figcaption>
+        </figure>
+
+        <!-- Seção 2: A customização -->
+        <h3>1. A customização</h3>
+        <p>A customização da variável `--bs-primary` foi realizada para alinhar a identidade visual padrão do framework Bootstrap com a paleta cromática verde do AgroFeira, garantindo coerência visual sem alterar diretamente os componentes internos da biblioteca.</p>
+        
+        <table class="tabela-safra">
+            <caption>Tabela 1 — Comparativo de variáveis CSS</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Variável</th>
+                    <th scope="col">Valor Original</th>
+                    <th scope="col">Valor Customizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">--bs-primary</th>
+                    <td>#0d6efd</td>
+                    <td>#2e6f40 (Verde AgroFeira)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <figure>
+            <img src="captura-3-regra-botao.png" alt="A regra .btn-primary no painel Styles do DevTools evidenciando a propriedade --bs-btn-bg" width="600" height="400">
+            <figcaption>Captura 3 — A regra .btn-primary no painel Styles.</figcaption>
+        </figure>
+        <figure>
+            <img src="captura-4-1200-depois.png" alt="O catalogo-bootstrap.html em 1200 pixels no tema claro após a aplicação da customização visual" width="600" height="400">
+            <figcaption>Captura 4 — O catálogo em 1200 px após a customização (versão "depois").</figcaption>
+        </figure>
+
+        <!-- Seção 3: As medições -->
+        <h3>2. As medi
