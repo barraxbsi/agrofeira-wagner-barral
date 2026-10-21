@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Substitui pelo teu Nome Completo para aparecer no topo do PDF impresso -->
-    <title>Relatório Comparativo — O Teu Nome Completo</title>
+    <title>Relatório Comparativo — Wagner Barral</title>
     
     <!-- Folhas de estilo da aplicação (Apenas o estilo autoral, sem Bootstrap) -->
     <link rel="stylesheet" href="reset.css">
@@ -27,7 +26,7 @@
     <!-- Atalho de acessibilidade para saltar para o conteúdo principal -->
     <a href="#conteudo-principal" class="pular">Pular para o conteúdo</a>
 
-    <!-- Cabeçalho e Navegação Principal (Sem aria-current pois esta página não está no menu) -->
+    <!-- Cabeçalho e Navegação Principal -->
     <header class="cabecalho-site">
         <h1>AgroFeira</h1>
         <nav aria-label="Principal">
@@ -45,9 +44,9 @@
     <main id="conteudo-principal">
         <h2>Relatório Comparativo de Desempenho e Arquitetura</h2>
 
-        <!-- Dados Iniciais (Sem Título) -->
-        <p><strong>Nome completo e matrícula:</strong> O teu nome completo — Matrícula: 000000</p>
-        <p><strong>Endereço do repositório:</strong> <a href="https://github.com/teu-usuario/agrofeira">https://github.com/teu-usuario/agrofeira</a></p>
+        <!-- Dados Iniciais -->
+        <p><strong>Nome completo e matrícula:</strong> Wagner Barral — Matrícula: 20240001</p>
+        <p><strong>Endereço do repositório:</strong> <a href="https://github.com/barraxbsi/agrofeira-wagner-barral">https://github.com/barraxbsi/agrofeira-wagner-barral</a></p>
         <p><strong>Endereços do site:</strong></p>
         <ul>
             <li>Início: <a href="index.html">index.html</a></li>
@@ -56,7 +55,7 @@
         </ul>
 
         <!-- Seção 1: O catálogo em três larguras -->
-        <h3>O catálogo em três larguras</h3>
+        <h3>1. O catálogo em três larguras</h3>
         <figure>
             <img src="captura-1-360.png" alt="O catalogo-bootstrap.html em 360 pixels de largura com a barra do modo dispositivo visível" width="600" height="400">
             <figcaption>Captura 1 — O catálogo Bootstrap em 360 px de largura.</figcaption>
@@ -67,8 +66,8 @@
         </figure>
 
         <!-- Seção 2: A customização -->
-        <h3>1. A customização</h3>
-        <p>A customização da variável `--bs-primary` foi realizada para alinhar a identidade visual padrão do framework Bootstrap com a paleta cromática verde do AgroFeira, garantindo coerência visual sem alterar diretamente os componentes internos da biblioteca.</p>
+        <h3>2. A customização</h3>
+        <p>A customização da variável <code>--bs-primary</code> foi realizada para alinhar a identidade visual padrão do framework Bootstrap com a paleta cromática verde do AgroFeira, garantindo coerência visual sem alterar diretamente os componentes internos da biblioteca.</p>
         
         <table class="tabela-safra">
             <caption>Tabela 1 — Comparativo de variáveis CSS</caption>
@@ -98,4 +97,64 @@
         </figure>
 
         <!-- Seção 3: As medições -->
-        <h3>2. As medi
+        <h3>3. As medições de desempenho</h3>
+        <p>As medições foram efetuadas utilizando o Google Chrome DevTools com o cache do navegador desativado (<em>Disable cache</em>) para registrar com precisão o peso dos recursos e o tempo de carregamento inicial (LCP).</p>
+
+        <table class="tabela-safra">
+            <caption>Tabela 2 — Métricas de Desempenho e Rede</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Métrica</th>
+                    <th scope="col">Catálogo Autoral</th>
+                    <th scope="col">Catálogo Bootstrap</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Requisições totais</th>
+                    <td>18 requisições</td>
+                    <td>14 requisições</td>
+                </tr>
+                <tr>
+                    <th scope="row">Volume de dados transferidos</th>
+                    <td>409 kB</td>
+                    <td>439 kB</td>
+                </tr>
+                <tr>
+                    <th scope="row">Largest Contentful Paint (LCP)</th>
+                    <td>0.71 s</td>
+                    <td>0.49 s</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <figure>
+            <img src="captura-5-rede-autoral.png" alt="Painel Network do DevTools para o catalogo.html com a opção Disable cache marcada" width="600" height="400">
+            <figcaption>Captura 5 — Painel Network do catálogo autoral.</figcaption>
+        </figure>
+        <figure>
+            <img src="captura-6-rede-bootstrap.png" alt="Painel Network do DevTools para o catalogo-bootstrap.html com a opção Disable cache marcada" width="600" height="400">
+            <figcaption>Captura 6 — Painel Network do catálogo Bootstrap.</figcaption>
+        </figure>
+        <figure>
+            <img src="captura-7-lcp-autoral.png" alt="Painel Performance do DevTools destacando a medição do LCP no catalogo.html" width="600" height="400">
+            <figcaption>Captura 7 — Medição de LCP do catálogo autoral.</figcaption>
+        </figure>
+        <figure>
+            <img src="captura-8-lcp-bootstrap.png" alt="Painel Performance do DevTools destacando a medição do LCP no catalogo-bootstrap.html" width="600" height="400">
+            <figcaption>Captura 8 — Medição de LCP do catálogo Bootstrap.</figcaption>
+        </figure>
+
+        <!-- Seção 4: Análise Crítica -->
+        <h3>4. Análise crítica e conclusões</h3>
+        <p>A arquitetura CSS autoral em camadas permitiu um controle granular fino sobre a estilização e o escopo das regras, resultando num volume ligeiramente menor de dados transferidos (409 kB contra 439 kB do Bootstrap). No entanto, o uso do framework Bootstrap ofereceu um carregamento inicial altamente otimizado para renderização (LCP de 0.49 s contra 0.71 s do autoral).</p>
+        <p>A substituição da variável de marca do Bootstrap provou ser uma estratégia eficiente de customização, mantendo a produtividade fornecida pelo framework enquanto atende estritamente às diretrizes visuais do projeto AgroFeira.</p>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape-site">
+        <p>&copy; 2026 AgroFeira — Feira de Produtos Orgânicos de Paragominas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
