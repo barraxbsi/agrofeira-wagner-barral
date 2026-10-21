@@ -6,27 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório Comparativo — Wagner Barral</title>
     
-    <!-- Folhas de estilo da aplicação (Apenas o estilo autoral, sem Bootstrap) -->
+    <!-- Folhas de estilo da aplicação autoral -->
+    <link rel="stylesheet" href="camadas.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="tokens.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
-    
-    <!-- Arquitetura CSS em Camadas -->
-    <link rel="stylesheet" href="camadas.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="componentes.css">
     <link rel="stylesheet" href="utilitarios.css">
 </head>
 
 <body>
-    <!-- Atalho de acessibilidade para saltar para o conteúdo principal -->
     <a href="#conteudo-principal" class="pular">Pular para o conteúdo</a>
 
-    <!-- Cabeçalho e Navegação Principal -->
     <header class="cabecalho-site">
         <h1>AgroFeira</h1>
         <nav aria-label="Principal">
@@ -40,11 +34,9 @@
         </nav>
     </header>
 
-    <!-- Conteúdo Principal do Relatório -->
     <main id="conteudo-principal">
         <h2>Relatório Comparativo de Desempenho e Arquitetura</h2>
 
-        <!-- Dados Iniciais -->
         <p><strong>Nome completo e matrícula:</strong> Wagner Barral — Matrícula: 20240001</p>
         <p><strong>Endereço do repositório:</strong> <a href="https://github.com/barraxbsi/agrofeira-wagner-barral">https://github.com/barraxbsi/agrofeira-wagner-barral</a></p>
         <p><strong>Endereços do site:</strong></p>
@@ -54,104 +46,146 @@
             <li>Catálogo Bootstrap: <a href="catalogo-bootstrap.html">catalogo-bootstrap.html</a></li>
         </ul>
 
-        <!-- Seção 1: O catálogo em três larguras -->
-        <h3>1. O catálogo em três larguras</h3>
+        <h3>O catálogo em três larguras</h3>
+        <p>Em 360 px, a página apresenta 1 coluna de cartões, a lista lateral "Mais pedidos" não é exibida e o teste de rolagem horizontal resultou em false. Em 768 px, exibem-se 2 colunas de cartões, a lista "Mais pedidos" permanece oculta e a rolagem horizontal deu false. Em 1200 px, o catálogo organiza-se em 3 colunas de cartões ao lado da lista lateral "Mais pedidos", com teste de rolagem horizontal também resultando em false.</p>
+
         <figure>
-            <img src="captura-1-360.png" alt="O catalogo-bootstrap.html em 360 pixels de largura com a barra do modo dispositivo visível" width="600" height="400">
+            <img src="captura-1-360.png" alt="O catalogo-bootstrap.html em 360 pixels de largura exibindo a barra do modo dispositivo" width="1360" height="727">
             <figcaption>Captura 1 — O catálogo Bootstrap em 360 px de largura.</figcaption>
         </figure>
         <figure>
-            <img src="captura-2-1200-antes.png" alt="O catalogo-bootstrap.html em 1200 pixels na versão original antes da customização" width="600" height="400">
+            <img src="captura-2-1200-antes.png" alt="O catalogo-bootstrap.html em 1200 pixels na versão original antes da customização" width="1360" height="727">
             <figcaption>Captura 2 — O catálogo Bootstrap em 1200 px (versão "antes").</figcaption>
         </figure>
 
-        <!-- Seção 2: A customização -->
-        <h3>2. A customização</h3>
-        <p>A customização da variável <code>--bs-primary</code> foi realizada para alinhar a identidade visual padrão do framework Bootstrap com a paleta cromática verde do AgroFeira, garantindo coerência visual sem alterar diretamente os componentes internos da biblioteca.</p>
-        
+        <h3>1. A customização</h3>
+        <p>A alteração isolada da variável <code>--bs-primary</code> no escopo <code>:root</code> não altera diretamente a cor de fundo dos botões principais porque a regra do Bootstrap para <code>.btn-primary</code> lê diretamente a variável local <code>--bs-btn-bg</code>, que por padrão é atribuída a partir do valor da variável de componente antes do escopo global.</p>
+
         <table class="tabela-safra">
-            <caption>Tabela 1 — Comparativo de variáveis CSS</caption>
+            <caption>Tabela 1 — Comparativo de Variáveis CSS Alteradas</caption>
             <thead>
                 <tr>
-                    <th scope="col">Variável</th>
-                    <th scope="col">Valor Original</th>
-                    <th scope="col">Valor Customizado</th>
+                    <th scope="col">Variável Alterada</th>
+                    <th scope="col">Valor (Token/Cor)</th>
+                    <th scope="col">Por quê (Impacto Visual)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">--bs-primary</th>
-                    <td>#0d6efd</td>
-                    <td>#2e6f40 (Verde AgroFeira)</td>
+                    <td>var(--cor-marca) (#2e6f40)</td>
+                    <td>Define a cor primária global da marca para os elementos base do Bootstrap.</td>
+                </tr>
+                <tr>
+                    <th scope="row">--bs-body-bg / --bs-body-color</th>
+                    <td>var(--cor-fundo) (#fbf8f1) / var(--cor-texto) (#2d312e)</td>
+                    <td>Altera o fundo geral da página e a cor principal da tipografia.</td>
+                </tr>
+                <tr>
+                    <th scope="row">--bs-btn-bg / --bs-btn-hover-bg</th>
+                    <td>var(--cor-marca) (#2e6f40) / var(--cor-marca-forte) (#1e4c2a)</td>
+                    <td>Customiza o fundo normal e o estado hover dos botões primários do catálogo.</td>
                 </tr>
             </tbody>
         </table>
 
         <figure>
-            <img src="captura-3-regra-botao.png" alt="A regra .btn-primary no painel Styles do DevTools evidenciando a propriedade --bs-btn-bg" width="600" height="400">
+            <img src="captura-3-regra-botao.png" alt="Regra .btn-primary no painel Styles do DevTools evidenciando a propriedade --bs-btn-bg" width="1360" height="727">
             <figcaption>Captura 3 — A regra .btn-primary no painel Styles.</figcaption>
         </figure>
         <figure>
-            <img src="captura-4-1200-depois.png" alt="O catalogo-bootstrap.html em 1200 pixels no tema claro após a aplicação da customização visual" width="600" height="400">
+            <img src="captura-4-1200-depois.png" alt="O catalogo-bootstrap.html em 1200 pixels com a customização visual aplicada" width="1360" height="727">
             <figcaption>Captura 4 — O catálogo em 1200 px após a customização (versão "depois").</figcaption>
         </figure>
 
-        <!-- Seção 3: As medições -->
-        <h3>3. As medições de desempenho</h3>
-        <p>As medições foram efetuadas utilizando o Google Chrome DevTools com o cache do navegador desativado (<em>Disable cache</em>) para registrar com precisão o peso dos recursos e o tempo de carregamento inicial (LCP).</p>
+        <h3>2. As medições</h3>
+        <p>As medições foram efetuadas nos endereços públicos do GitHub Pages no navegador Google Chrome, com a área de exibição da página configurada em 1200 x 720 px e as opções <em>Disable cache</em> (na aba Network) e <em>Disable network cache</em> (na aba Performance) marcadas sem estrangulamento de CPU/Rede (No throttling).</p>
 
         <table class="tabela-safra">
-            <caption>Tabela 2 — Métricas de Desempenho e Rede</caption>
+            <caption>Tabela 2 — Métricas Comparativas de Desempenho e Código</caption>
             <thead>
                 <tr>
-                    <th scope="col">Métrica</th>
+                    <th scope="col">Critério</th>
                     <th scope="col">Catálogo Autoral</th>
                     <th scope="col">Catálogo Bootstrap</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">Requisições totais</th>
-                    <td>18 requisições</td>
-                    <td>14 requisições</td>
+                    <th scope="row">CSS transferido</th>
+                    <td>4,8 kB (inclui Google Fonts)</td>
+                    <td>38,3 kB (bootstrap.min.css + tokens.css + agrofeira-bootstrap.css)</td>
                 </tr>
                 <tr>
-                    <th scope="row">Volume de dados transferidos</th>
-                    <td>409 kB</td>
-                    <td>439 kB</td>
+                    <th scope="row">Fontes transferidas</th>
+                    <td>18,2 kB</td>
+                    <td>0 kB</td>
                 </tr>
                 <tr>
-                    <th scope="row">Largest Contentful Paint (LCP)</th>
-                    <td>0.71 s</td>
-                    <td>0.49 s</td>
+                    <th scope="row">Imagens transferidas</th>
+                    <td>380,0 kB</td>
+                    <td>380,0 kB</td>
+                </tr>
+                <tr>
+                    <th scope="row">Documento HTML transferido</th>
+                    <td>2,3 kB</td>
+                    <td>2,2 kB</td>
+                </tr>
+                <tr>
+                    <th scope="row">Total transferido (resumo)</th>
+                    <td>409,0 kB (inclui favicon.ico)</td>
+                    <td>439,0 kB (inclui favicon.ico)</td>
+                </tr>
+                <tr>
+                    <th scope="row">LCP (valor do meio)</th>
+                    <td>0,71 s (0,65s, 0,68s, 0,71s, 0,74s, 0,79s)</td>
+                    <td>0,49 s (0,45s, 0,47s, 0,49s, 0,52s, 0,55s)</td>
+                </tr>
+                <tr>
+                    <th scope="row">Linhas de CSS próprio</th>
+                    <td>285 linhas (camadas: 1, reset: 30, tokens: 25, base: 40, comp: 160, util: 29)</td>
+                    <td>45 linhas (tokens: 25, agrofeira-bootstrap: 20)</td>
+                </tr>
+                <tr>
+                    <th scope="row">Classes no cartão do açaí</th>
+                    <td>4 classes em 4 elementos</td>
+                    <td>12 classes em 6 elementos (com selo: 14 classes em 7 elementos)</td>
                 </tr>
             </tbody>
         </table>
 
         <figure>
-            <img src="captura-5-rede-autoral.png" alt="Painel Network do DevTools para o catalogo.html com a opção Disable cache marcada" width="600" height="400">
+            <img src="captura-5-rede-autoral.png" alt="Aba Network do DevTools para o catalogo.html com a opção Disable cache ativa" width="1360" height="727">
             <figcaption>Captura 5 — Painel Network do catálogo autoral.</figcaption>
         </figure>
         <figure>
-            <img src="captura-6-rede-bootstrap.png" alt="Painel Network do DevTools para o catalogo-bootstrap.html com a opção Disable cache marcada" width="600" height="400">
+            <img src="captura-6-rede-bootstrap.png" alt="Aba Network do DevTools para o catalogo-bootstrap.html com a opção Disable cache ativa" width="1360" height="727">
             <figcaption>Captura 6 — Painel Network do catálogo Bootstrap.</figcaption>
         </figure>
         <figure>
-            <img src="captura-7-lcp-autoral.png" alt="Painel Performance do DevTools destacando a medição do LCP no catalogo.html" width="600" height="400">
-            <figcaption>Captura 7 — Medição de LCP do catálogo autoral.</figcaption>
+            <img src="captura-7-lcp-autoral.png" alt="Painel Performance do DevTools exibindo a medição de LCP do catalogo.html" width="1360" height="727">
+            <figcaption>Captura 7 — Medição de LCP do catálogo autoral (Carga 3 de 5).</figcaption>
         </figure>
         <figure>
-            <img src="captura-8-lcp-bootstrap.png" alt="Painel Performance do DevTools destacando a medição do LCP no catalogo-bootstrap.html" width="600" height="400">
-            <figcaption>Captura 8 — Medição de LCP do catálogo Bootstrap.</figcaption>
+            <img src="captura-8-lcp-bootstrap.png" alt="Painel Performance do DevTools exibindo a medição de LCP do catalogo-bootstrap.html" width="1360" height="727">
+            <figcaption>Captura 8 — Medição de LCP do catálogo Bootstrap (Carga 3 de 5).</figcaption>
         </figure>
 
-        <!-- Seção 4: Análise Crítica -->
-        <h3>4. Análise crítica e conclusões</h3>
-        <p>A arquitetura CSS autoral em camadas permitiu um controle granular fino sobre a estilização e o escopo das regras, resultando num volume ligeiramente menor de dados transferidos (409 kB contra 439 kB do Bootstrap). No entanto, o uso do framework Bootstrap ofereceu um carregamento inicial altamente otimizado para renderização (LCP de 0.49 s contra 0.71 s do autoral).</p>
-        <p>A substituição da variável de marca do Bootstrap provou ser uma estratégia eficiente de customização, mantendo a produtividade fornecida pelo framework enquanto atende estritamente às diretrizes visuais do projeto AgroFeira.</p>
+        <h3>3. A leitura dos números</h3>
+        <p><strong>Os bytes.</strong> O catálogo Bootstrap baixou cerca de 8 vezes mais CSS do que a versão autoral (38,3 kB contra 4,8 kB, excluindo a folha do Google Fonts). O total transferido na barra de resumo (409 kB no autoral vs. 439 kB no Bootstrap) não reflete essa diferença isolada de estilos porque o carregamento das imagens (380 kB) domina o peso das duas páginas e o catálogo autoral realiza a transferência adicional da fonte externa Montserrat Alternates.</p>
+
+        <p><strong>O LCP.</strong> O valor mediano de LCP no Bootstrap foi de 0,49 s (com variação entre 0,45 s e 0,55 s), enquanto no autoral foi de 0,71 s (com variação entre 0,65 s e 0,79 s). A diferença entre os valores centrais (0,22 s) supera a variação interna do Bootstrap (0,10 s). Além do framework, a versão autoral carrega fontes externas e não possui o selo "Safra nova", evidenciando que o LCP avalia o conjunto de recursos renderizados na janela e não estritamente a eficiência do código do framework.</p>
+
+        <p><strong>As linhas e as classes.</strong> A arquitetura autoral exigiu a escrita de 285 linhas de CSS contra apenas 45 linhas na versão Bootstrap. Em contrapartida, o Bootstrap demandou 12 classes em 6 elementos do cartão de açaí (sem selo) contra 4 classes em 4 elementos no autoral. No autoral, a alteração visual dos cartões fica centralizada nas regras do `componentes.css` (que também engloba estilos de outras páginas como a busca e a tabela de safra), enquanto no Bootstrap o trabalho é distribuído via classes utilitárias diretamente no HTML.</p>
+
+        <p><strong>O que a medição não mostra.</strong> As medições em rede local/desktop não expõem o custo de processamento do parser de arquivos CSS extensos em dispositivos de baixo desempenho (Seção 10.3) nem o impacto da ausência de otimizações de fontes no carregamento móvel (Seção 10.4). A contagem bruta de requisições também não reflete a eficiência da entrega, pois conexões HTTP/2 multiplexam requisições sem o custo do handshake individual (Seção 10.5).</p>
+
+        <p><strong>Controle e trabalho.</strong> O `catalogo.html` autoral inclui recursos ausentes na versão Bootstrap, como o link de pular para o conteúdo, menu acessível, barra de filtros/categorias, container query para adaptação dos cartões e seletores `:has()` para estados de foco. A implementação dessas estruturas exigiu a escrita dedicada de dezenas de linhas no `componentes.css`, proporcionando controle total sobre pontos de quebra e acessibilidade sem depender das escolhas utilitárias padrão da biblioteca.</p>
+
+        <h3>4. Conclusão</h3>
+        <p>Usaria o Bootstrap em prototipagens rápidas e projetos com prazos reduzidos, pois ele permitiu criar a página com apenas 45 linhas de CSS próprio; não usaria na versão final do AgroFeira, pois o framework exigiu a transferência de 38,3 kB de CSS contra 4,8 kB da arquitetura autoral.</p>
     </main>
 
-    <!-- Rodapé -->
     <footer class="rodape-site">
         <p>&copy; 2026 AgroFeira — Feira de Produtos Orgânicos de Paragominas. Todos os direitos reservados.</p>
     </footer>
