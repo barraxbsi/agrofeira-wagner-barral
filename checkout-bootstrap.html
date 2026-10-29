@@ -28,23 +28,23 @@
       <!-- Nome completo -->
       <div class="col-12 col-md-6">
         <label for="nome" class="form-label">Nome completo</label>
-        <input type="text" class="form-control" id="nome" name="nome" autocomplete="name" required>
-        <div class="invalid-feedback">Informe o seu nome.</div>
+        <input type="text" class="form-control" id="nome" name="nome" autocomplete="name" required aria-describedby="nome-erro">
+        <div id="nome-erro" class="invalid-feedback">Informe o seu nome.</div>
       </div>
 
       <!-- E-mail -->
       <div class="col-12 col-md-6">
         <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
-        <div class="invalid-feedback">Informe um e-mail, como maria@exemplo.com.br.</div>
+        <input type="email" class="form-control" id="email" name="email" autocomplete="email" required aria-describedby="email-erro">
+        <div id="email-erro" class="invalid-feedback">Informe um e-mail, como maria@exemplo.com.br.</div>
       </div>
 
       <!-- Aceite dos termos -->
       <div class="col-12">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="termos" name="termos" required>
+          <input type="checkbox" class="form-check-input" id="termos" name="termos" required aria-describedby="termos-erro">
           <label class="form-check-label" for="termos">Li e aceito as regras da feira</label>
-          <div class="invalid-feedback">É preciso aceitar as regras para continuar.</div>
+          <div id="termos-erro" class="invalid-feedback">É preciso aceitar as regras para continuar.</div>
         </div>
       </div>
 
