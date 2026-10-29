@@ -74,28 +74,28 @@
                 <tbody>
                     <tr>
                         <th scope="row">Botão de menu (Hamburger)</th>
-                        <th scope="row">Falta de nome acessível compreensível para leitores de tela na barra de navegação responsiva.</th>
+                        <td>Falta de nome acessível compreensível para leitores de tela na barra de navegação responsiva.</td>
                         <td>Painel Accessibility do F12 (Passo 5), verificando que o nome do botão vinha vazio ou em inglês genérico.</td>
                         <td>Adição do atributo <code>aria-label="Alternar navegação"</code> no botão do menu.</td>
                         <td><code>catalogo-bootstrap.html</code>, na barra de navegação (<code>nav</code> principal).</td>
                     </tr>
                     <tr>
                         <th scope="row">Diálogo modal (Detalhes do Açaí)</th>
-                        <th scope="row">Ausência do papel semântico de diálogo e título inadequado (h5) para a hierarquia do documento.</th>
+                        <td>Ausência do papel semântico de diálogo e título inadequado (h5) para a hierarquia do documento.</td>
                         <td>Erros reportados pelo Nu HTML Checker (Validador W3C) e recomendações da apostila (Passo 4 e 4.10).</td>
                         <td>Inclusão de <code>role="dialog"</code>, <code>aria-modal="true"</code> e alteração do título para <code>h2</code> com ID associado via <code>aria-labelledby</code>.</td>
                         <td><code>catalogo-bootstrap.html</code>, na estrutura do modal de detalhes.</td>
                     </tr>
                     <tr>
                         <th scope="row">Botão de fechar do modal</th>
-                        <th scope="row">O botão de fechar (X) não possuía texto descritivo textual para leitores de tela.</th>
+                        <td>O botão de fechar (X) não possuía texto descritivo textual para leitores de tela.</td>
                         <td>Inspeção da árvore de acessibilidade no painel Accessibility do F12.</td>
                         <td>Atribuição do atributo <code>aria-label="Fechar"</code> no botão de fechar do modal.</td>
                         <td><code>catalogo-bootstrap.html</code>, no cabeçalho do diálogo modal.</td>
                     </tr>
                     <tr>
                         <th scope="row">Mensagens de erro do formulário</th>
-                        <th scope="row">As mensagens de validação visuais (<code>invalid-feedback</code>) não estavam vinculadas semanticamente aos campos do formulário na árvore de acessibilidade.</th>
+                        <td>As mensagens de validação visuais (<code>invalid-feedback</code>) não estavam vinculadas semanticamente aos campos do formulário na árvore de acessibilidade.</td>
                         <td>Diretrizes da apostila (seção 2.10) sobre a limitação do estilo puramente visual de <code>was-validated</code>.</td>
                         <td>Criação de IDs únicos nas mensagens de erro e associação aos campos de entrada utilizando o atributo <code>aria-describedby</code>.</td>
                         <td><code>checkout-bootstrap.html</code>, nos campos de Nome, E-mail e Aceite.</td>
@@ -107,21 +107,4 @@
             <p>Abaixo encontram-se as pendências estruturais declaradas que não podem ser resolvidas puramente via marcação estática HTML:</p>
             <ul>
                 <li><strong>Foco após envio com erro:</strong> Atualmente, o foco permanece no botão de submissão após um envio com falha de validação; redirecioná-lo dinamicamente para o primeiro campo com erro requer o auxílio de um script de controle focado.</li>
-                <li><strong>Conteúdo dinâmico do diálogo modal:</strong> O modal de detalhes exibe atualmente conteúdo estático centrado no açaí; atualizar o conteúdo do diálogo de forma dinâmica conforme o produto selecionado na grelha exige manipulação avançada via programa (JavaScript).</li>
-            </ul>
-        </section>
-
-        <!-- Seção 2: O registro de decisão -->
-        <section>
-            <h3>2. O registro de decisão</h3>
-            <p>A adoção do framework Bootstrap 5.3 permitiu acelerar a prototipagem de componentes complexos responsivos (como barras de navegação flexíveis, grades adaptativas e diálogos modais) mantendo a coesão visual através do mapeamento de variáveis locais (tokens). Contudo, exigiu auditorias manuais rigorosas de acessibilidade (ARIA attributes) para mitigar lacunas nativas da biblioteca e assegurar conformidade total com os padrões W3C.</p>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="rodape-site">
-        <p>AgroFeira Paragominas — Valorizando a agricultura local.</p>
-    </footer>
-</body>
-
-</html>
+                <li><strong>Conteúdo dinâmico do diálogo modal
