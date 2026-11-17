@@ -4,62 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript na AgroFeira</title>
+    <title>JavaScript na AgroFeira — Wagner Barral da Conceicao</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
 
-    <!-- Folhas de estilo da aplicação -->
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
 
-    <!-- Arquitetura CSS em Camadas -->
-    <link rel="stylesheet" href="camadas.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="componentes.css">
-    <link rel="stylesheet" href="utilitarios.css">
+        ul {
+            margin-bottom: 20px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .error-box {
+            background: #fff3f3;
+            border-left: 4px solid #e74c3c;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Atalho de acessibilidade para saltar para o conteúdo principal -->
-    <a href="#conteudo-principal" class="pular">Pular para o conteúdo</a>
 
-    <!-- Cabeçalho e Navegação Principal -->
-    <header class="cabecalho-site">
-        <h1>AgroFeira</h1>
-        <nav aria-label="Principal">
-            <ul class="menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="safra.html">Safra</a></li>
-                <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h2>Relatório da Aula 8 — Desenvolvimento Web</h2>
 
-    <!-- Conteúdo Principal -->
-    <main id="conteudo-principal">
-        <h2>JavaScript na AgroFeira</h2>
-        <p>Nesta página testei as três formas de incluir JavaScript: externa (via arquivo .js), interna (dentro de uma tag script) e em linha (com o atributo onclick num botão).</p>
+    <p>
+        <strong>Nome Completo:</strong> Wagner Barral da Conceicao<br>
+        <strong>Matrícula:</strong> 2024005015<br>
+        <strong>Repositório:</strong> <a href="https://github.com/barraxbsi/agrofeira-wagner-barral"
+            target="_blank">https://github.com/barraxbsi/agrofeira-wagner-barral</a><br>
+        <strong>Endereço do Site (aula8.html):</strong> <a
+            href="https://barraxbsi.github.io/agrofeira-wagner-barral/aula8.html"
+            target="_blank">https://barraxbsi.github.io/agrofeira-wagner-barral/aula8.html</a>
+    </p>
 
-        <!-- Script da Forma 1 (Externa) -->
-        <script src="js/aula8.js"></script>
+    <hr>
 
-        <!-- Script da Forma 2 (Interna) -->
-        <script>
-            console.log('Forma 2: interna, dentro da tag script na pagina');
-        </script>
-        <!-- Botão da Forma 3 (Em linha) -->
-        <button type="button" onclick="alert('Forma 3: em linha, dentro da tag')">Forma 3</button>
-    </main>
+    <h2>Meus projetos</h2>
+    <ul>
+        <li>Tabuleiro (Parte B): <a href="https://codesandbox.io/p/sandbox/p6mpwy"
+                target="_blank">https://codesandbox.io/p/sandbox/p6mpwy</a></li>
+        <li>AgroFeira em componentes (Parte C): <a href="https://codesandbox.io/p/sandbox/hxxrpn"
+                target="_blank">https://codesandbox.io/p/sandbox/hxxrpn</a></li>
+    </ul>
 
-    <!-- Rodapé -->
-    <footer class="rodape-site">
-        <p>AgroFeira Paragominas — Valorizando a agricultura local.</p>
-    </footer>
+    <h2>Mensagens que encontrei</h2>
+    <ul>
+        <li>
+            <strong>Passo 6:</strong>
+            <div class="error-box"><code>Uncaught ReferenceError: naoExiste is not defined</code></div>
+        </li>
+        <li>
+            <strong>Passo 10:</strong>
+            <div class="error-box">
+                <code>Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>?</code>
+            </div>
+        </li>
+        <li>
+            <strong>Passo 14:</strong>
+            <div class="error-box"><code>Identifier 'value' has already been declared</code></div>
+        </li>
+    </ul>
+
+    <h2>O que eu aprendi</h2>
+
+    <h3>1. As três formas. Imagine um programa de 200 linhas que várias páginas do seu site usariam. Qual das três
+        formas dos Passos 3 a 5 você usaria, e por quê? Compare com o que você já faz com o CSS.</h3>
+    <p>Num programa de 200 linhas reutilizado em várias páginas, a escolha ideal seria a terceira forma (criação de um
+        ficheiro JavaScript externo), pois centraliza o código e evita a duplicação excessiva. Colocar tudo inline no
+        HTML (forma 1) tornaria a manutenção impraticável e poluída à medida que o projeto cresce. Da mesma forma que no
+        CSS utilizamos folhas de estilos externas ligadas por link para estilizar todo o site de forma coesa, o
+        JavaScript externo modulariza a lógica e mantém o código limpo, organizado e fácil de atualizar.</p>
+
+    <h3>2. Repetição. No tabuleiro, o mesmo botão se repetia nove vezes, e a solução foi o Square. No catalogo.html do
+        seu site, o que se repete várias vezes (os cartões de produto)? Qual seria o componente equivalente e quais
+        seriam as suas props?</h3>
+    <p>No catálogo da AgroFeira, o elemento que se repete várias vezes é a estrutura visual de cada cartão de produto,
+        que apresenta o nome, preço e o botão de compra. O componente equivalente em React seria o componente
+        <code>ProdutoCard</code>, responsável por renderizar cada item de forma isolada. As propriedades (props)
+        passadas para esse componente incluiriam informações dinâmicas como o nome do produto, o preço e a origem do
+        produtor local, permitindo reutilizar o mesmo layout para diferentes itens.</p>
+
+    <h3>3. Props e estado. No Produto do Passo 17, qual dado chega por props e qual fica no estado? Você clicou em dois
+        produtos: por que os outros não mudaram? Cite o nome de um produto seu.</h3>
+    <p>No componente de produto, dados estáticos como o nome e o preço chegam através de <code>props</code> vindos do
+        componente pai, enquanto o estado de controle de clique (por exemplo, se o produto foi adicionado ou não ao
+        carrinho) é gerido localmente pelo <code>useState</code>. Os outros produtos não mudaram de estado porque o
+        React trata cada instância do componente de forma isolada e independente. Um exemplo de produto presente no
+        catálogo é o "Açaí", cujo botão muda de aspeto de forma autónoma ao ser clicado sem afetar os restantes itens da
+        lista.</p>
+
+    <h3>4. A decisão de estilo. Releia o decisao.html da Atividade 6: a sua escolha (folha autoral, Bootstrap ou
+        Tailwind) e o que faria você mudar de ideia. O styles.css dos projetos do CodeSandbox é uma folha escrita à mão.
+        Depois do que você fez nos Passos 8 a 18, a sua decisão de estilo muda? Diga que sim ou que não, e por quê,
+        citando uma coisa que você viu.</h3>
+    <p>Sim, a perspetiva sobre a decisão de estilo muda após a experiência prática nos sandboxes. Inicialmente,
+        frameworks como o Bootstrap ou o Tailwind parecem atrativos pela rapidez, mas ver a simplicidade e o controlo
+        total proporcionados por um ficheiro <code>styles.css</code> escrito à mão demonstra a facilidade de
+        personalizar cada detalhe visual sem dependências externas. Ver como o CSS se integra diretamente com a
+        estrutura dos componentes no CodeSandbox fez perceber que escrever estilos de forma autoral oferece maior
+        liberdade criativa e evita a sobrecarga de classes complexas.</p>
+
 </body>
 
 </html>
